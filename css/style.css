@@ -1,0 +1,2743 @@
+@charset "UTF-8";
+
+/* RESET CSS */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* CUSTOM RESET*/
+a {
+    text-decoration: none;
+}
+* {
+    box-sizing: border-box;
+}
+*:focus {
+    outline: 0;
+}
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+body {
+    -webkit-touch-callout: none; /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none; /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none; /* prevent copy paste, to allow, change 'none' to 'text' */
+}
+
+/* JQUERY MOBILE RESET */
+.ui-loader {
+    display: none !important;
+}
+
+
+/* GENERAL APP STYLES */
+
+/* GENERALES */
+body {
+    width: 100%;
+    height: 100%;
+}
+.app {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    min-height: 100%;
+}
+[data-role="page"] {
+    z-index: 10;
+    min-height: 100% !important;
+}
+
+/* SPLASHSCREENS */
+#splashscreen {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    background: url(../images/splashscreen.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: 0;
+    z-index: 1000;
+}
+
+/* LOADING */
+#loading {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    z-index: 100;
+    display: none;
+    opacity: 0;
+}
+#loading_gif {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    background: url(../images/loading.gif) no-repeat center;
+    background-size: contain;
+}
+
+/* PAGE CONTENT */
+.page_content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    z-index: 1;
+}
+
+/* ---------- ------------------------- ----------- */
+/* ---------- ------------------------- ----------- */
+/* ---------- ------------------------- ----------- */
+/* ---------- COMPLETAR ESTILOS PROPIOS ----------- */
+
+/* FONTS */
+@font-face {
+    font-family: 'mont_li';
+    src: url('fonts/mont_li.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'mont_sb';
+    src: url('fonts/mont_sb.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'built_bd';
+    src: url('fonts/built_bd.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'built_sb';
+    src: url('fonts/built_sb.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* COMPLETAR ESTILOS INICIALES */
+body {
+    background-color: #ffffff;
+    font-family: 'mont_li';
+    font-size: 12px;
+    color: #ffffff;
+}
+::-webkit-input-placeholder { 
+    font-family: 'mont_li';
+    color: #ffffff;
+}
+#loading {
+    background: rgba(0,0,0,0.8);
+}
+#loading_gif {
+    width: 100px;
+    height: 100px;
+    margin: -50px 0px 0px -50px;
+}
+
+/* PAGE CONTENT */
+.page_content {
+    top: 60px;
+    bottom: 54px;
+}
+
+/* ---------- ------------------------- ----------- */
+/* ---------- ------------------------- ----------- */
+/* ---------- ------------------------- ----------- */
+/* ----------         ESTRUCTURA        ----------- */
+
+/* LAYOUT */
+.page_content_bottom {
+    bottom: 0px !important;
+}
+.page_content_tienda {
+    top: 115px !important;
+}
+.full {
+    float: left;
+    width: 100%;
+}
+.half {
+    float: left;
+    width: 50%;
+}
+.half_minheight {
+    min-height: 1px;
+}
+.half_first {
+    float: left;
+    width: 50%;
+    padding-right: 10px;
+    padding-left: 15px;
+}
+.half_last {
+    float: left;
+    width: 50%;
+    padding-left: 10px;
+    padding-right: 15px;
+}
+.padding_10 {
+    float: left;
+    width: 100%;
+    padding: 0px 10%;
+}
+.padding_5 {
+    float: left;
+    width: 100%;
+    padding: 0px 5%;
+}
+.separator {
+    float: left;
+    width: 100%;
+    margin: 20px 0px;
+    border-color: #fff;
+}
+.page_head {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    float: left;
+    width: 100%;
+    height: 60px;
+    background: #000;
+}
+.page_head_title {
+    float: left;
+    width: 100%;
+    height: 100%;
+    background-size: auto 40px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.btn_back {
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 10px;
+    margin-top: -22px;
+    width: 44px;
+    height: 44px;
+    background: url(../images/btn_back.png) no-repeat center;
+    background-size: 30px;
+}
+.btn_info {
+    position: absolute;
+    display: block;
+    top: 50%;
+    right: 10px;
+    margin-top: -22px;
+    width: 44px;
+    height: 44px;
+    background: url(../images/btn_info.png) no-repeat center;
+    background-size: 30px;
+}
+.btn_menu {
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 10px;
+    margin-top: -22px;
+    width: 44px;
+    height: 44px;
+    background: url(../images/btn_menu.png) no-repeat center;
+    background-size: 24px;
+}
+.btn_cart {
+    position: absolute;
+    display: block;
+    top: 50%;
+    right: 10px;
+    margin-top: -22px;
+    width: 44px;
+    height: 44px;
+    background: url(../images/btn_cart.png) no-repeat center;
+    background-size: 30px;
+}
+.btn_cart_count {
+    position: absolute;
+    top: 0px;
+    right: -8px;
+    width: 30px;
+    height: 22px;
+    background: url(../images/btn_cart_count.png) no-repeat center;
+    background-size: contain;
+    color: #fff;
+    padding: 5px 4px 0px 9px;
+    text-align: center;
+}
+.btn_displaySearch {
+    position: absolute;
+    display: block;
+    top: 50%;
+    right: 50px;
+    margin-top: -22px;
+    width: 44px;
+    height: 44px;
+    background: url(../images/btn_search.png) no-repeat center;
+    background-size: 30px;
+}
+.btn_displayMenu {
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 10px;
+    margin-top: -22px;
+    width: 44px;
+    height: 44px;
+    background: url(../images/btn_menu.png) no-repeat center;
+    background-size: 20px;
+}
+
+.btn_displayMenu1 {
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 10px;
+    margin-top: -22px;
+    width: 30px;
+    height: 44px;
+    background: url(../images/hambur-menu.png) no-repeat center;
+    background-size: 100%;
+}
+
+#success-modal{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    z-index: 100;
+    display: none;
+    opacity: 1;
+}
+
+#success-modal p{
+    position: fixed;
+    font-size: 18px;
+    font-weight: bold;
+    top: 50%;
+    left: 50%;
+    height: 50px;
+    width: 300px;
+    margin-left: -150px;
+    margin-top: -25px;
+    text-align: center;
+    padding: 15px;
+    background-color: rgba(0,0,0,1);
+    border-radius: 10px;
+}
+
+#success-modal {
+    background: rgba(0,0,0,0.6);
+
+    -webkit-transition:all 0.5s ease-out;  /* Chrome y Safari */
+  -o-transition:all 0.5s ease-out;  /* Opera */
+  -moz-transition:all 0.5s ease-out;  /* Mozilla Firefox */
+  -ms-transition:all 0.5s ease-out;   /* Internet Explorer */
+  transition:all 0.5s ease-out;  /* W3C */
+}
+
+
+
+.continuar-float{
+	position:fixed;
+	width:100%;
+	margin-left:-20px;
+	bottom:53px;
+	border-top:1px solid rgba(207,207,207,0.87);
+	padding:10px;
+	background-color:white;
+	}
+
+/* MENÚS */
+#menu_tienda {
+    position: fixed;
+    top: 60px;
+    left: 0px;
+    width: 100%;
+    height: 54px;
+    border-top: 1px solid #fff;
+    padding: 5px 0px;
+    background: #000;
+    z-index: 20;
+}
+.menu_tienda_item {
+    float: left;
+    width: 16.6%;
+    height: 100%;
+    text-align: center;
+}
+#menu_tienda_item_chef {
+    width: 17% !important;
+}
+.menu_tienda_btn {
+    display: inline-block;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    background-color: #000;
+    background-size: 44px 88px;
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+}
+.menu_tienda_btn_selected {
+    background-position: 0px -44px;
+    background-color: #fff;
+}
+#menu_tienda_chef {
+    display: inline-block;
+    width: 44px;
+    height: 44px;
+    background-image: url(../images/menu_tienda_chef.gif) !important;
+    background-position: center !important;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#menu_tienda_cerdo {
+    background-image: url(../images/menu_tienda_cerdo.png);
+}
+#menu_tienda_res {
+    background-image: url(../images/menu_tienda_res.png);
+}
+#menu_tienda_pollo {
+    background-image: url(../images/menu_tienda_pollo.png);
+}
+#menu_tienda_pez {
+    background-image: url(../images/menu_tienda_pez.png);
+}
+#menu_tienda_charc {
+    background-image: url(../images/menu_tienda_charc.png);
+}
+.menu_bottom {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 54px;
+    background: #fff;
+    z-index: 20;
+}
+.menu_bottom_item {
+    float: left;
+    width: 20%;
+    height: 44px;
+    margin: 5px 0px;
+    text-align: center;
+}
+.menu_bottom_sep {
+    border-left: 1px solid #df2229;
+    border-right: 1px solid #df2229;
+}
+.menu_bottom_btn {
+    display: inline-block;
+    width: 44px;
+    height: 44px;
+    background-size: 44px 88px;
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+}
+.menu_bottom_btn_selected {
+    background-position: 0px -44px;
+}
+#menu_bottom_tienda {
+    background-image: url(../images/menu_btm_tienda.png);
+}
+#menu_bottom_marcas {
+    background-image: url(../images/menu_btm_marcas.png);
+}
+#menu_bottom_promos {
+    background-image: url(../images/menu_btm_promos.png);
+}
+#menu_bottom_pedidos {
+    background-image: url(../images/menu_btm_pedidos.png);
+}
+#menu_bottom_perfil {
+    background-image: url(../images/menu_btm_perfil.png);
+}
+
+/* FORMULARIOS */
+.app_input_container {
+    position: relative;
+    float: left;
+    width: 80%;
+    margin-left: 10%;
+}
+.geo_input_container {
+    position: relative;
+    float: left;
+    width: 100%;
+}
+.app_input_container::before {
+    content: "";
+    position: absolute;
+    bottom: 15px;
+    left: -15px;
+    width: 15px;
+    height: 15px;
+    background: url(../images/input_left.png);
+    background-size: 15px 15px;
+}
+.app_input_container::after {
+    content: "";
+    position: absolute;
+    bottom: 15px;
+    right: -15px;
+    width: 15px;
+    height: 15px;
+    background: url(../images/input_right.png);
+    background-size: 15px 15px;
+}
+.app_input {
+    float: left;
+    width: 100%;
+    height: 30px;
+    margin-bottom: 15px !important;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #fff !important;
+    color: #fff;
+    border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+.count_input_container {
+    position: relative;
+    float: left;
+    width: 30px;
+    margin-left: 25px;
+}
+.count_input_container::before {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: -15px;
+    width: 15px;
+    height: 15px;
+    background: url(../images/input_left_black.png);
+    background-size: 15px 15px;
+}
+.count_input_container::after {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    right: -15px;
+    width: 15px;
+    height: 15px;
+    background: url(../images/input_right_black.png);
+    background-size: 15px 15px;
+}
+.count_input {
+    float: left;
+    width: 30px;
+    height: 30px;
+    padding: 0px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #000 !important;
+    font-family: 'mont_sb';
+    color: #000;
+    text-align: center;
+    font-size: 14px;
+    border-radius: 0px;
+    -webkit-border-radius: 0px;
+}
+.count_input::-webkit-input-placeholder { 
+    font-family: 'mont_sb';
+    color: #000;
+}
+.canasta_input_container {
+    position: relative;
+    float: left;
+    width: 80%;
+    margin-left: 10%;
+    margin-bottom: 20px;
+}
+.canasta_input_container::before {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: -15px;
+    width: 15px;
+    height: 15px;
+    background: url(../images/input_left_black.png);
+    background-size: 15px 15px;
+}
+.canasta_input_container::after {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    right: -15px;
+    width: 15px;
+    height: 15px;
+    background: url(../images/input_right_black.png);
+    background-size: 15px 15px;
+}
+.canasta_input {
+    display: block;
+    float: left;
+    width: 100%;
+    height: 30px;
+    padding: 0px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #000 !important;
+    font-family: 'mont_sb';
+    color: #DF2229;
+    text-align: left;
+    font-size: 14px;
+    border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+.canasta_input::-webkit-input-placeholder { 
+    font-family: 'mont_sb';
+    color: #DF2229;
+}
+.chef_input {
+    float: left;
+    width: 100%;
+    height: 30px;
+    padding: 0px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #000 !important;
+    font-family: 'mont_sb';
+    color: #DF2229;
+    text-align: center;
+    font-size: 14px;
+    border-radius: 0px;
+    -webkit-border-radius: 0px;
+}
+.chef_input::-webkit-input-placeholder { 
+    font-family: 'mont_sb';
+    color: #DF2229;
+}
+
+/* BOTONES */
+.app_button_red {
+    display: inline-block;
+    background: #ef6d72;
+    padding: 3px;
+    font-family: 'built_bd';
+    color: #fff;
+    letter-spacing: 1px;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    overflow: hidden;
+}
+.app_button_red_full {
+    display: inline-block;
+    width: 100%;
+    background: #ef6d72;
+    padding: 3px;
+    text-align: center;
+    font-family: 'built_bd';
+    color: #fff;
+    letter-spacing: 1px;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    overflow: hidden;
+}
+.app_button_black {
+    display: inline-block;
+    background: #4d4d4d;
+    padding: 3px;
+    font-family: 'built_bd';
+    color: #fff;
+    letter-spacing: 1px;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    overflow: hidden;
+}
+.app_button_facebook {
+    display: inline-block;
+    background: #3b5998;
+    padding: 3px;
+    font-family: 'built_bd';
+    color: #fff;
+    letter-spacing: 1px;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    overflow: hidden;
+}
+.app_button_black_full {
+    display: inline-block;
+    width: 100%;
+    background: #4d4d4d;
+    padding: 3px;
+    text-align: center;
+    font-family: 'built_bd';
+    color: #fff;
+    letter-spacing: 1px;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    overflow: hidden;
+}
+.btn_44 {
+    height: 44px;
+    font-size: 16px;
+}
+
+.hacerp-flot{
+	position:fixed;
+	bottom:58px;
+	margin-left:-80px;
+	}
+
+.btn_30 {
+    height: 30px;
+}
+.btn_1_red {
+    display: block;
+    float: left;
+    width: 100%;
+    height: 100%;
+    border: 3px solid #fff;
+    border-radius: 12px;
+    -webkit-border-radius: 15px;
+    overflow: hidden;
+}
+.btn_2_red {
+    display: block;
+    float: left;
+    width: 100%;
+    height: 100%;
+    background: #df2229;
+    padding: 8px 20px 0px 20px;
+    vertical-align: middle;
+}
+.btn_2_red_30 {
+    display: block;
+    float: left;
+    width: 100%;
+    height: 100%;
+    background: #df2229;
+    padding: 4px 10px 0px 10px;
+    vertical-align: middle;
+}
+.btn_2_black {
+    display: block;
+    float: left;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    padding: 4px 10px 0px 10px;
+    vertical-align: middle;
+}
+.btn_2_facebook {
+    display: block;
+    float: left;
+    width: 100%;
+    height: 100%;
+    background: #3b5998;
+    padding: 4px 10px 0px 10px;
+    vertical-align: middle;
+}
+.btn_terms {
+    color: #df2229;
+    text-decoration: underline;
+}
+
+/* ---------- ------------------------ ----------- */
+/* ---------- ------------------------ ----------- */
+/* ---------- ------------------------ ----------- */
+/* ---------- PÁGINAS DE LA APLICACIÓN ----------- */
+
+/* BUSCADOR */
+#buscador_cont {
+    position: fixed;
+    top: -60px;
+    left: 0px;
+    width: 100%;
+    height: 60px;
+    padding: 0px 5%;
+    background: #df2229;
+    z-index: 100;
+    transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0,0,0);
+    -webkit-transition: top 0.2s;
+	-moz-transition: top 0.2s;
+	transition: top 0.2s;
+}
+.buscador_show {
+    top: 0px !important;
+}
+#buscador_input {
+    float: left;
+    width: 50%;
+    padding-top: 15px;
+}
+#buscador_btn {
+    float: left;
+    width: 35%;
+    padding: 15px 5px 0px 5px;
+}
+#buscador_cerrar_cont {
+    float: left;
+    width: 15%;
+}
+#buscador_cerrar {
+    float: right;
+    width: 33px;
+    height: 33px;
+    margin-top: 13px;
+    padding: 8px 0px 0px 10px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+}
+
+
+#cobertura-modal{
+    position: fixed;
+    top: 0px;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    bottom: 0px;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 100;
+    transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0,0,0);
+    -webkit-transition: left 0.5s;
+    -moz-transition: left 0.5s;
+    transition: left 0.5s;
+}
+
+#img-cobertura{
+    position: fixed;
+    top: 50%;
+    left: 0%;
+    width: 100%;
+	margin-top:-25%;
+	height:auto;
+    background-color: white;
+    z-index: 100;
+    transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0,0,0);
+    -webkit-transition: left 0.5s;
+    -moz-transition: left 0.5s;
+    transition: left 0.5s;
+}
+
+#cerrar-modalcober{
+    position: fixed;
+    left: 100%;
+    width: 30px;
+	margin-left:-35px;
+	height:30px;
+    background-color: white;
+    z-index: 100;
+    transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0,0,0);
+    -webkit-transition: left 0.5s;
+    -moz-transition: left 0.5s;
+    transition: left 0.5s;
+	color:black;
+	border-radius:10px;
+	padding-top:3px;
+	padding-left:7px;
+	font-size:20px;
+	font-weight:bold;
+}
+
+.modalcober_show{
+    left: 0% !important;
+}
+
+
+
+#menu-lateral{
+    position: fixed;
+    top: 0px;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    bottom: 0px;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 100;
+    transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0,0,0);
+    -webkit-transition: left 0.5s;
+    -moz-transition: left 0.5s;
+    transition: left 0.5s;
+}
+
+.content-lateral{
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    background-color: #FFF;
+    width: 80%;
+    height: 100%;
+}
+
+.menu-lateral-show{
+    left: 0% !important;
+}
+
+.menu-perfil{
+    float: left;
+    width: 100%;
+    height: 40%;
+    background-image: url(https://carnesmarket.co/images/perfil_bg.jpg);
+	background-size:cover;
+}
+
+
+#perfil_profilePic1 {
+    position: relative;
+    margin: 0 auto;
+    margin-top: 10px;
+    width: 100px;
+    height: 100px;
+    background: #fff;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url(../images/profile.png);
+}
+
+.btn-registro{
+    position: relative;
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 100px;
+    background: rgb(224,33,40);
+    padding: 7px;
+    text-align: center;
+    border: 1px solid #FFF;
+    border-radius: 5px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.btn-ingresar{
+    color: white;
+    font-size: 15px;
+}
+
+#perfil-name{
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+	color:white;
+	font-weight:bold;
+}
+
+.menu-conte{
+    float: left;
+    margin-left: 5%;
+    margin-top: 20px;
+    width: 95%;
+    height: 50%;
+    overflow: auto;
+}
+
+.menu-conte img{
+    float: left;
+    width: 30px;
+    height: 30px;
+}
+
+.menu-div{
+    float: left;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    color: black;
+    font-size: 17px;
+}
+
+.menu-div a{
+    color: black;
+}
+
+.div-menu{
+    float: left;
+    margin-top: 10px;
+    width: 100%;
+}
+
+#cuenta-perfil{
+    display: none;
+}
+
+#cuenta-pedidos{
+    display: none;
+}
+#cuenta-salir{
+    display: none;
+}
+
+
+
+.submenu-hnosotros{
+    display: none;
+    float: left;
+    width: 80%;
+    margin-left: 60px;
+	margin-top: -13px;
+    font-size: 16px;
+}
+
+.menu-llamar{
+    margin-top: 20px;
+    width: 80%
+}
+
+.menu-llamar a{
+    color: black;
+}
+
+
+.img-up{
+    float: left;
+    width: 16px;
+    height: 9px;
+    margin-top: 15px;
+    margin-left: 5px;
+    background-image: url(https://carnesmarket.co/images/web/arrow.png);
+    background-size: 100%;
+}
+
+
+.modal-llamame{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    z-index: 100;
+    display: none;
+    opacity: 1;
+    background-color: rgba(0,0,0,0.1);
+}
+
+.content-llamame{
+    margin-left: 5%;
+    margin-top: 50%;
+    width: 70%;
+    height: auto;
+    border-radius: 5px;
+    background-color: white;
+    padding: 10px;
+}
+
+.content-llamame input[type="text"]{
+    font-size: 120%;
+    width: 90%;
+    height: 45px;
+    margin-left: 5%;
+    margin-top: 10px;
+    border-radius: 3px;
+    border: 1px solid rgba(0,0,0,0.3);
+}
+
+.content-llamame input::-webkit-input-placeholder {
+  color: gray;
+  font-size: 120%;
+}
+.content-llamame input:-moz-placeholder {
+  color: gray;
+  font-size: 120%; 
+}
+.content-llamame input:-ms-input-placeholder { 
+  color: gray;
+  font-size: 120%; 
+}
+
+.llamame-ya{
+    font-size: 120%;
+    font-weight: bold;
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 10px;
+    padding: 13px;
+    background-color: red;
+    text-align: center;
+    border-radius: 5px;
+}
+
+
+.cerrar-menu{
+    float: right;
+    padding: 0px 4px;
+    margin-top: 5px;
+    margin-right: 5px;
+    width: 25px;
+    height: 25px;
+    /*border: 2px solid #FFF;*/
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 20px;
+	color:white;
+}
+
+
+.cerrar-menu1{
+    float: right;
+    padding: 0px 4px;
+    margin-top: -25px;
+    margin-right: -25px;
+    width: 25px;
+    height: 25px;
+    border: 2px solid #FFF;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 20px;
+    background-color: white;
+	font-weight:bold;
+	color:black;
+}
+
+
+/* MENÚ LATERAL */
+#menuLateral_cont {
+    position: fixed;
+    top: 0px;
+    left: -85%;
+    width: 85%;
+    bottom: 0px;
+    background: #000000;
+    z-index: 100;
+    transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0,0,0);
+    -webkit-transition: left 0.5s;
+	-moz-transition: left 0.5s;
+	transition: left 0.5s;
+}
+.menuLateral_show {
+    left: 0% !important;
+}
+#menuLateral_cerrar_cont {
+    float: left;
+    width: 100%;
+}
+#menuLateral_cerrar {
+    float: right;
+    width: 33px;
+    height: 33px;
+    margin: 10px 10px 0px 0px;
+    padding: 8px 0px 0px 10px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+}
+
+/* PAGE INDEX */
+#page_splash {
+    background: #000;
+}
+#splash_logo {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 160px;
+    height: 160px;
+    margin: -80px 0px 0px -80px;
+    border-radius: 80px;
+    -webkit-border-radius: 80px;
+    box-shadow: 0px 0px 10px #000;
+    -webkit-box-shadow: 0px 0px 10px #000;
+    background: url(../images/splash_logo.gif) no-repeat center;
+    background-size: contain;
+}
+
+/* PAGE LOGIN */
+#page_first {
+    background: url(../images/login_bg.jpg) no-repeat center;
+    background-size: cover;
+    text-align: center;
+}
+#login_logo {
+    float: left;
+    width: 100%;
+    height: 160px;
+    margin-top: 20px;
+    text-align: center;
+}
+#login_logo img {
+    height: 100%;
+}
+#login_form {
+    margin-top: 20px;
+}
+.btn_text_container {
+    float: left;
+    width: 100%;
+    text-align: center;
+    margin: 10px 0px 20px 0px;
+}
+.btn_forgot_pass {
+    color: #fff;
+}
+#login_terms_container {
+    float: left;
+    width: 100%;
+    margin: 10px 0px;
+}
+#registro_aceptarTerms {
+    float: left;
+    width: 100%;
+    margin: 10px 0px 20px 0px;
+}
+#registro_aceptarTerms table td {
+    vertical-align: middle;
+    text-align: left;
+    padding: 0px 5px;
+}
+#aceptaTerminos {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(../images/btn_check.png) no-repeat;
+    background-size: 30px 60px;
+    background-position: 0px 0px;
+}
+.aceptaTerminos_selected {
+    background-position: 0px -30px !important;
+}
+
+/* PAGE REGISTRO */
+#page_registro {
+    background: url(../images/login_bg.jpg) no-repeat center;
+    background-size: cover;
+    text-align: center;
+}
+#head_registro {
+    background: transparent;
+}
+#title_registro {
+    background-image: url(../images/title_registro.png);
+}
+#btn_registrarse {
+    margin-top: 20px;
+}
+
+/* PAGE RESTABLECER PASS */
+#page_restablecer {
+    background: #000;
+    text-align: center;
+}
+#head_restablecer {
+    background: transparent;
+}
+#title_restablecer {
+    background-image: url(../images/title_restablecer.png);
+}
+#btn_restablecer {
+    margin-top: 50px;
+}
+
+/* PAGE TERMINOS */
+#page_terminos, #page_privacidad {
+    background: #000;
+}
+#title_terminos {
+    background-image: url(../images/title_info.png);
+}
+.terminos_iframe {
+    float: left;
+    width: 100%;
+    height: 100%;
+}
+
+/* PAGE TIENDA */
+#head_tienda {
+    background-image: url(../images/head_bg1.png);
+}
+#title_tienda {
+    background-image: url(../images/title_tienda.png);
+}
+#tienda_items_title {
+    margin: 10px 0px;
+    padding-left: 10px;
+    color: #000;
+}
+.tienda_item {
+    position: relative;
+    float: left;
+    width: 50%;
+    border: 1px solid #fff;
+}
+.tienda_item_img {
+    float: left;
+    width: 100%;
+    height: 160px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #CCCCCC;
+}
+.tienda_item_title {
+    float: left;
+    width: 100%;
+    height: 32px;
+    background: #df2229;
+    text-align: center;
+    font-size: 12px;
+    padding: 5px 5px 0px 5px;
+    overflow: hidden;
+    line-height: 23px;
+}
+.tienda_item_title span {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 13px;      
+}
+.tienda_item_price {
+    float: left;
+    width: 100%;
+    height: 35px;
+    background: #df2229;
+    text-align: center;
+    padding: 5px;
+    overflow: hidden;
+    font-family: 'mont_sb';
+}
+.tachado {
+    text-decoration: line-through;
+}
+.tienda_item_buy {
+    float: left;
+    width: 100%;
+    background: #df2229;
+    text-align: center;
+    padding-bottom: 5px;
+}
+.tienda_item_icon {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 34px;
+    height: 34px;
+    background: #000;
+    background-image: url(../images/product_icons.png);
+    background-size: 150px 30px;
+    background-repeat: no-repeat;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+}
+.tienda_item_icon_cerdo {
+    background-position: 0px 0px;
+}
+.tienda_item_icon_res {
+    background-position: -30px 0px;
+}
+.tienda_item_icon_pollo {
+    background-position: -60px 0px;
+}
+.tienda_item_icon_pez {
+    background-position: -90px 0px;
+}
+.tienda_item_icon_charc {
+    background-position: -120px 0px;
+}
+.tienda_item_btn {
+    position: absolute;
+    bottom: 108px;
+    right: 5px;
+    width: 40px;
+    height: 40px;
+    background: url(../images/btn_more.png) no-repeat center;
+    background-size: contain;
+}
+.producto_agotado {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background: rgba(0,0,0,0.6);
+    text-align: center;
+    font-size: 20px;
+    padding-top: 50%;
+}
+.noitems_msg {
+    display: block;
+    color: #DF2229;
+    width: 100%;
+    text-align: center;
+    margin: 100px 0px;
+    font-size: 20px;
+}
+
+/* PAGE CATEGORÍAS */
+.categoria_item {
+    position: relative;
+    float: left;
+    width: 100%;
+    margin-bottom: 1px;
+}
+.categoria_img {
+    float: left;
+    width: 100%;
+    height: 106px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #CCCCCC;
+}
+.categoria_title {
+    float: left;
+    width: 100%;
+    padding: 5px;
+    background: #df2229;
+    font-family: 'mont_sb';
+}
+.categoria_item_btn {
+    position: absolute;
+    bottom: 12px;
+    right: 5px;
+    width: 40px;
+    height: 40px;
+    background: url(../images/btn_more.png) no-repeat center;
+    background-size: contain;
+}
+.notFound {
+    float: left;
+    width: 100%;
+    margin-top: 20px;
+    padding: 0px 5%;
+    text-align: center;
+    color: #000;
+}
+
+/* PAGE PRODUCTO DETALLE */
+#product_img {
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 210px;
+    background-color: #FFFFFF;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#product_category {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 34px;
+    height: 34px;
+    background-color: #000;
+    background-image: url(../images/product_icons.png);
+    background-size: 150px 30px;
+    background-repeat: no-repeat;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+}
+#product_title {
+    float: left;
+    width: 100%;
+    padding: 5px 5%;
+    background: #df2229;
+}
+#product_price {
+    float: left;
+    width: 100%;
+    padding: 10px 5% 5px 5%;
+    font-family: 'mont_sb';
+    color: #df2229;
+    font-size: 16px;
+    text-align: center;
+}
+#product_presentation {
+    float: left;
+    width: 100%;
+    padding: 0px 5%;
+    color: #4E4D4D;
+    text-align: center;
+}
+#product_description {
+    float: left;
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px 5%;
+    background: #E6E6E6;
+    color: #4D4D4D;
+}
+#product_agregar {
+    float: left;
+    width: 100%;
+    margin-top: 10px;
+    padding: 0px 5%;
+    color: #000;
+}
+#product_agregar_title {
+    float: left;
+    font-family: 'mont_sb';
+    font-size: 16px;
+    padding-top: 12px;
+}
+#product_agregar_btn {
+    float: right;
+    width: 40px;
+    height: 40px;
+    background: url(../images/btn_more.png) no-repeat center;
+    background-size: contain;
+}
+#product_agregar_btnTitle {
+    float: right;
+    margin-right: 10px;
+    padding-top: 13px;
+    font-size: 14px;
+    font-family: 'built_bd';
+    color: #df2229;
+}
+#btn_shareProduct {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+/* PAGE CHEF */
+#title_chef {
+    background-image: url(../images/menu_tienda_chef.gif);
+}
+#chef_title {
+    float: left;
+    width: 100%;
+    height: 65px;
+    margin-top: 10px;
+    padding-left: 60px;
+    padding-top: 10px;
+    background-color: #df2229;
+    background-image: url(../images/chef_title.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top left;
+    text-align: center;
+    color: #fff;
+}
+#chef_title_top {
+    float: left;
+    width: 100%;
+    font-family: 'built_bd';
+    font-size: 18px;
+}
+#chef_title_bottom {
+    float: left;
+    width: 100%;
+}
+#chef_description {
+    float: left;
+    width: 100%;
+    margin-top: 10px;
+    font-family: 'built_bd';
+    font-size: 16px;
+    color: #4D4D4D;
+    text-align: center;
+}
+#chef_form_cont {
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 250px;
+    margin-top: 20px;
+}
+#chef_circle {
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    width: 250px;
+    height: 250px;
+    margin-left: -125px;
+    border: 40px solid #000;
+    border-radius: 50%;
+    z-index: 1;
+}
+.chef_btn {
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    z-index: 30;
+    border-radius: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 3px solid #fff;
+    background-color: #000;
+}
+.chef_btn_selected {
+    background-color: #df2229;
+}
+#chef_gotoPersonas {
+    bottom: 20px;
+    left: 10px;
+    background-image: url(../images/chef_1_ico.png);
+}
+#chef_gotoPreferencias {
+    bottom: -20px;
+    left: 75px;
+    background-image: url(../images/chef_2_ico.png);
+}
+#chef_gotoDias {
+    bottom: -20px;
+    right: 75px;
+    background-image: url(../images/chef_3_ico.png);
+}
+#chef_gotoComidas {
+    bottom: 20px;
+    right: 10px;
+    background-image: url(../images/chef_4_ico.png);
+}
+.chef_part {
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    width: 250px;
+    height: 250px;
+    margin-left: -125px;
+    z-index: 20;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#chef_personas {
+    background-image: url(../images/chef_1.png);
+}
+#chef_preferencias {
+    background-image: url(../images/chef_2.png);
+    display: none;
+}
+#chef_dias {
+    background-image: url(../images/chef_3.png);
+    display: none;
+}
+#chef_comidas {
+    background-image: url(../images/chef_4.png);
+    display: none;
+}
+.chef_agregarbtn {
+    position: absolute;
+    top: 50%;
+    right: 45px;
+    width: 30px;
+    height: 30px;
+    margin-top: -15px;
+    background: url(../images/chef_agregar.png) no-repeat center;
+    background-size: cover;
+}
+.chef_quitarbtn {
+    position: absolute;
+    top: 50%;
+    left: 45px;
+    width: 30px;
+    height: 30px;
+    margin-top: -15px;
+    background: url(../images/chef_quitar.png) no-repeat center;
+    background-size: cover;
+}
+#chef_PersonasCant {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    height: 80px;
+    margin-left: -50px;
+    margin-top: -38px;
+    font-family: 'built_bd';
+    font-size: 80px;
+    color: #df2229;
+    text-align: center;
+}
+.chef_preferencias_btn {
+    position: absolute;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    background-size: 44px 88px;
+    background-repeat: no-repeat;
+    background-position: -2px -46px;
+    border: 2px solid #fff;
+}
+.chef_preferencias_btn_sel {
+    border: 2px solid #000;
+}
+#chef_preferencias_cerdo {
+    top: 55px;
+    left: 70px;
+    background-image: url(../images/menu_tienda_cerdo.png);
+}
+#chef_preferencias_res {
+    top: 55px;
+    left: 135px;
+    background-image: url(../images/menu_tienda_res.png);
+}
+#chef_preferencias_pollo {
+    top: 100px;
+    left: 100px;
+    background-image: url(../images/menu_tienda_pollo.png);
+}
+#chef_preferencias_pez {
+    top: 145px;
+    left: 70px;
+    background-image: url(../images/menu_tienda_pez.png);
+}
+#chef_preferencias_charc {
+    top: 145px;
+    left: 135px;
+    background-image: url(../images/menu_tienda_charc.png);
+}
+#chef_DiasCant {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    height: 80px;
+    margin-left: -50px;
+    margin-top: -38px;
+    font-family: 'built_bd';
+    font-size: 80px;
+    color: #df2229;
+    text-align: center;
+}
+#chef_btn_cont {
+    float: left;
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+#chef_comidas_selCont {
+    position: relative;
+    float: left;
+    width: 100%;
+    margin-top: 110px;
+    padding: 0px 45px;
+    height: 30px;
+}
+#chef_comidasCant {
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 30px;
+    font-size: 12px;
+    padding: 0px;
+    border: 0;
+    text-align: center;
+    text-align-last: center;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    opacity: 0;
+    z-index: 2;
+}
+#chef_comidasCant_text {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding: 9px 45px 0px 45px;
+    color: #000;
+    z-index: 1;
+}
+
+/* PAGE CHEF SUGERENCIAS */
+#chef_filtros {
+    position: fixed;
+    top: 60px;
+    left: 0px;
+    right: 0px;
+    height: 30px;
+    font-family: 'mont_sb';
+}
+.chef_filtro {
+    float: left;
+    width: 25%;
+    height: 30px;
+    color: #000;
+    text-align: center;
+    font-size: 12px;
+    padding: 8px 0px 0px 0px;
+}
+.chef_filtro_sel {
+    color: #fff;
+    background: #df2229;
+}
+#page_content_sugerencias {
+    bottom: 144px;
+    top: 90px;
+}
+.chef_item_img {
+    float: left;
+    width: 100%;
+    height: 160px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #CCCCCC;
+}
+#chef_agregar {
+    position: fixed;
+    bottom: 54px;
+    left: 0px;
+    right: 0px;
+    padding: 10px 0px;
+    text-align: center;
+    background: #000;
+}
+#chef_agregar_info_personas {
+    float: left;
+    width: 15%;
+    height: 70px;
+    padding: 0px 5px 5px 5px;
+    border-right: 1px solid #fff;
+}
+#chef_agregar_info_preferencias {
+    float: left;
+    width: 20%;
+    height: 70px;
+    padding: 0px 5px;
+    border-right: 1px solid #fff;
+}
+#chef_agregar_info_dias {
+    float: left;
+    width: 15%;
+    height: 70px;
+    padding: 0px 5px;
+    border-right: 1px solid #fff;
+}
+#chef_agregar_info_comidas {
+    float: left;
+    width: 20%;
+    height: 70px;
+    padding: 0px 5px;
+    border-right: 1px solid #fff;
+}
+#chef_agregar_info_total {
+    float: left;
+    width: 30%;
+    height: 70px;
+    padding: 0px 5px;
+}
+.chef_agregar_img {
+    float: left;
+    width: 100%;
+    height: 35px;
+}
+.chef_agregar_img img {
+    height: 100%;
+    width: auto;
+}
+.chef_agregar_info_num {
+    float: left;
+    width: 100%;
+    color: #fff;
+    font-size: 14px;
+}
+.chef_agregar_info_sub {
+    float: left;
+    width: 100%;
+    margin-top: 3px;
+    font-size: 8px;
+}
+#chef_agregar_preficons {
+    float: left;
+    width: 100%;
+}
+#chef_agregar_info_preferencias table {
+    height: 100%;
+    width: 100%;
+}
+#chef_agregar_info_preferencias table td {
+    vertical-align: middle;
+}
+.chef_agregar_preficons_item {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    background-color: #fff;
+    background-size: 22px 44px;
+    background-repeat: no-repeat;
+    background-position: 0px -22px;
+}
+#chef_agregar_preficons_cerdo {
+        background-image: url(../images/menu_tienda_cerdo.png);
+}
+#chef_agregar_preficons_charc {
+        background-image: url(../images/menu_tienda_charc.png);
+}
+#chef_agregar_preficons_pez {
+        background-image: url(../images/menu_tienda_pez.png);
+}
+#chef_agregar_preficons_pollo {
+        background-image: url(../images/menu_tienda_pollo.png);
+}
+#chef_agregar_preficons_res {
+        background-image: url(../images/menu_tienda_res.png);
+}
+#chef_agregar_comidas {
+    float: left;
+    width: 100%;
+    margin-top: 2px;
+    font-size: 9px;
+}
+#chef_agregar_info_total_title {
+    float: left;
+    width: 100%;
+    font-size: 12px;
+}
+#chef_agregar_info_total_precio {
+    float: left;
+    width: 100%;
+    font-size: 14px;
+    margin: 5px 0px;
+}
+
+/* PAGE MARCAS */
+#title_marcas {
+    background-image: url(../images/title_marcas.png);
+}
+.marcas_item {
+    float: left;
+    width: 50%;
+    border: 1px solid #df2229;
+}
+.marcas_item img {
+    width: 100%;
+}
+
+/* PAGE PROMOS */
+#title_promos {
+    background-image: url(../images/title_promos.png);
+}
+.promos_item {
+    position: relative;
+    float: left;
+    width: 50%;
+    border: 1px solid #fff;
+}
+.promos_img {
+    float: left;
+    width: 100%;
+    height: 160px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #CCCCCC;
+}
+
+/* PAGE CANASTA */
+#title_canasta {
+    background-image: url(../images/title_carrito.png);
+}
+.canasta_title {
+    float: left;
+    width: 100%;
+    padding: 10px 0px;
+    margin-bottom: 10px;
+    color: #4D4D4D;
+    font-family: 'mont_li';
+    font-size: 14px;
+}
+.canasta_title_padding {
+    padding: 10px 5% !important;
+}
+.carrito_titles {
+    float: left;
+    width: 100%;
+    margin-bottom: 10px;
+    font-family: 'mont_sb';
+    color: #df2229;
+    text-align: center;
+    font-size: 12px;
+}
+.carrito_title_agregar {
+    float: left;
+    width: 8%;
+}
+.carrito_title_cantidad {
+    float: left;
+    width: 15%;
+}
+.carrito_title_producto {
+    float: left;
+    width: 43%;
+}
+.carrito_title_costo {
+    float: left;
+    width: 26%;
+}
+.carrito_agregar {
+    float: left;
+    width: 8%;
+}
+.carrito_agregar_btn {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    padding: 0px 0px 0px 1px;
+    color: #000;
+    font-size: 17px;
+    text-align: center;
+    border: 1px solid #000;
+    border-radius: 50%;
+}
+.carrito_cantidad {
+    float: left;
+    width: 15%;
+    padding-top: 5px;
+}
+.carrito_producto {
+    float: left;
+    width: 43%;
+    padding-top: 5px;
+}
+.carrito_costo {
+    float: left;
+    width: 26%;
+    padding-top: 5px;
+}
+.carrito_borrar {
+    float: left;
+    width: 8%;
+}
+.carrito_borrar_btn {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    color: #000;
+    font-size: 17px;
+    text-align: center;
+    border: 1px solid #000;
+    border-radius: 50%;
+}
+.canasta_items {
+    float: left;
+    width: 100%;
+    color: #000;
+}
+.carrito_item {
+    float: left;
+    width: 100%;
+    padding: 10px 0px;
+    border-bottom: 1px solid #000;
+    color: #000;
+    font-size: 10px;
+    text-align: center;
+}
+#canasta_1_footer {
+    float: left;
+    width: 100%;
+    margin-top: 30px;
+}
+#canasta_1_total_title {
+    font-size: 16px;
+    font-family: 'mont_sb';
+    color: #df2229;
+}
+#canasta_1_total {
+    text-align: right;
+    color: #000;
+    font-size: 16px;
+}
+.canasta_continuar_cont {
+    margin-top: 20px;
+    float: right !important;
+    text-align: right;
+}
+
+/* CANASTA 2 */
+#canasta_2_form {
+    margin-top: 30px;
+}
+.input_title {
+    float: left;
+    width: 100%;
+    text-align: center;
+    color: #000;
+    margin-bottom: 10px;
+}
+#canasta_modopago_cont {
+    float: left;
+    width: 100%;
+    margin-top: 10px;
+    font-size: 14px;
+}
+#canasta_modopago_cont table {
+    margin: 0 auto;
+    font-size: 16px;
+}
+#canasta_modopago_cont table td {
+    vertical-align: middle;
+    color: #000;
+    padding: 5px 10px;
+    text-align: center; 
+}
+.modopago_opt {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(../images/btn_check.png) no-repeat;
+    background-size: 30px 60px;
+    background-position: 0px 0px;
+}
+.modopago_opt_selected {
+    background-position: 0px -30px !important;
+}
+#anuncioMismoDia {
+    float: left;
+    width: 100%;
+    text-align: center;
+    color: #df2229;
+    padding-bottom: 10px;
+    display: none;
+}
+
+/* CANASTA MAPA */
+#canasta_map {
+    position: absolute;
+    top: 56px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    z-index: 1;
+}
+#map_direccion {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    padding-top: 10px;
+    background: #000;
+    border-top: 1px solid #fff;
+    z-index: 10;
+}
+.geodeco_field {
+    border-bottom: 0;
+    border: 1px solid #fff;
+    border-radius: 8px;
+    padding: 0px 5px;
+    text-align: center;
+}
+#pedido_direccionMapa_1 {
+    float: left;
+    width: 25%;
+    padding: 0px 5px;
+}
+#pedido_direccionMapa_2 {
+    float: left;
+    width: 22%;
+    padding: 0px 5px;
+}
+#pedido_direccionMapa_3 {
+    float: left;
+    width: 5%;
+    padding-top: 10px;
+    text-align: center;
+}
+#pedido_direccionMapa_4 {
+    float: left;
+    width: 22%;
+    padding: 0px 5px;
+}
+#pedido_direccionMapa_5 {
+    float: left;
+    width: 5%;
+    padding-top: 10px;
+    text-align: center;
+}
+#pedido_direccionMapa_6 {
+    float: left;
+    width: 21%;
+    padding: 0px 5px;
+}
+#pedido_direccionMapa_7 {
+    float: left;
+    width: 100%;
+}
+#map_footer {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 40px;
+    padding: 5px 5% 0px 5%;
+    background: #000;
+    z-index: 10;
+}
+#direcciones_save_cont {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 40px;
+    padding: 5px 5% 0px 5%;
+    background: #000;
+    z-index: 20;
+    display: none;
+}
+#canasta_map_pin {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 44px;
+    height: 44px;
+    margin: -44px 0px 0px -22px;
+    z-index: 100;
+    background: url(../images/map_pin.png) no-repeat center;
+    background-size: contain;
+}
+#canasta_map_center {
+    position: absolute;
+    bottom: 50px;
+    right: 10px;
+    width: 44px;
+    height: 44px;
+    z-index: 100;
+    background: url(../images/map_center.png) no-repeat center;
+    background-size: contain;
+    border-radius: 50%;
+}
+
+/* CANASTA 3 */
+#carrito_3_datos {
+    color: #000;
+    text-align: center;
+}
+.carrito_item_red {
+    border-bottom: 1px solid #df2229 !important;
+}
+.border_red_left {
+    border-bottom: 1px solid #df2229;
+    border-right: 1px solid #df2229;
+    padding: 10px;
+}
+.border_red_right {
+    border-bottom: 1px solid #df2229;
+    padding: 10px;
+}
+.border_red_bottom {
+    border-bottom: 1px solid #df2229;
+    padding: 10px;
+}
+.carrito_3_datos_title {
+    float: left;
+    width: 100%;
+    font-family: 'mont_sb';
+    color: #df2229;
+    text-align: center;
+}
+.carrito_3_datos_text {
+    float: left;
+    width: 100%;
+    margin-top: 10px;
+}
+#carrito_3_pagoToken_cont {
+    margin-top: 10px;
+}
+#canasta_3_footer {
+    margin: 10px 0px 20px 0px;
+    text-align: center;
+}
+#carrito_3_datos_total {
+    font-size: 16px;
+}
+#carrito_3_cupon_cont {
+    margin-top: 20px;
+}
+#info_iatai {
+    float: left;
+    width: 100%;
+    display: none;
+    opacity: 0;
+}
+#captcha_pregunta {
+    color: #000;
+    text-align: center;
+    font-size: 16px;
+    margin-top: 10px;
+}
+#carrito_3_captcha {
+    display: none;
+}
+
+/* CANASTA 4 */
+#page_canasta_4 {
+    background: url(../images/confirmacion_bg.jpg) no-repeat center;
+    background-size: cover;
+}
+#canasta_completo {
+    margin-top: 100px;
+    color: #ffffff;
+    text-align: center;
+}
+#canasta_completo_1 {
+    float: left;
+    width: 100%;
+    font-family: 'mont_sb';
+    font-size: 16px;
+}
+#canasta_completo_2 {
+    float: left;
+    width: 100%;
+    margin-top: 30px;
+    font-size: 14px;
+}
+#canasta_completo_volver {
+    float: left;
+    width: 100%;
+    margin-top: 50px;
+}
+
+/* PAGE PEDIDOS */
+#page_pedidos {
+    background: #000;
+}
+#title_pedidos {
+    background-image: url(../images/title_pedidos.png);
+}
+#pedidos_title {
+    background: #df2229;
+    padding: 10px 5%;
+    text-align: center;
+    font-family: 'mont_sb';
+}
+.pedido_title_estado {
+    float: left;
+    width: 30%;
+}
+.pedido_title_fecha {
+    float: left;
+    width: 40%;
+}
+.pedido_title_id {
+    float: left;
+    width: 30%;
+}
+.pedido_estado {
+    float: left;
+    width: 30%;
+}
+.pedido_estado_img {
+    float: left;
+    width: 100%;
+}
+.pedido_estado img {
+    width: 22px;
+}
+.pedido_estado_text {
+    float: left;
+    width: 100%;
+    margin-top: 3px;
+}
+.pedido_fecha {
+    float: left;
+    width: 40%;
+    padding-top: 12px;
+}
+.pedido_id {
+    float: left;
+    width: 30%;
+    padding-top: 12px;
+}
+#pedidos_items {
+    text-align: center;
+}
+.pedido_item {
+    float: left;
+    width: 100%;
+    padding: 10px 5%;
+    border-bottom: 1px solid #fff;
+    font-family: 'mont_li';
+}
+
+/* PAGE PEDIDOS DETALLE */
+#pedido_detalle_id {
+    float: left;
+    width: 100%;
+    padding: 10px 0px;
+    margin-bottom: 10px;
+    color: #4D4D4D;
+    font-family: 'mont_sb';
+    font-size: 16px;
+}
+#pedido_detalle_footer {
+    margin: 10px 0px 20px 0px;
+    text-align: center;
+}
+
+/* PAGE PERFIL */
+#title_perfil {
+    background-image: url(../images/title_perfil.png);
+}
+#perfil_bg {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 150px;
+    background: url(../images/perfil_bg.jpg) no-repeat center;
+    background-size: cover;
+}
+#perfil_info {
+    position: absolute;
+    top: 40px;
+    width: 100%;
+    color: #000000;
+    text-align: center;
+}
+#perfil_profilePic {
+    position: relative;
+    margin: 0 auto;
+    width: 150px;
+    height: 150px;
+    background: #fff;
+    border: 2px solid #EF6D72;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url(../images/profile.png);
+}
+#perfil_camera {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    width: 44px;
+    height: 44px;
+    border: 2px solid #EF6D72;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    background-image: url(../images/btn_camera.png);
+    background-color: #fff;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#perfil_nombre {
+    float: left;
+    width: 100%;
+    margin-top: 20px;
+    font-family: 'mont_sb';
+    color: #df2229;
+    font-size: 16px;
+}
+#perfil_correo {
+    float: left;
+    width: 100%;
+    margin-top: 30px;
+    font-size: 14px;
+}
+#perfil_celular {
+    float: left;
+    width: 100%;
+    margin-top: 10px;
+    font-size: 14px;
+}
+#perfil_genero {
+    float: left;
+    width: 100%;
+    margin-top: 20px;
+}
+#perfil_genero_title {
+    float: left;
+    width: 100%;
+    font-size: 14px;
+    color: #df2229;
+}
+#perfil_genero_opciones {
+    float: left;
+    width: 100%;
+    margin-top: 10px;
+    font-size: 14px;
+}
+#perfil_genero_opciones table {
+    margin: 0 auto;
+    font-size: 16px;
+}
+#perfil_genero_opciones table td {
+    vertical-align: middle;
+}
+td.perfil_genero_op_title {
+    padding-right: 5px;
+}
+td.perfil_genero_space {
+    padding-left: 20px;
+}
+.genero_opt {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(../images/btn_check.png) no-repeat;
+    background-size: 30px 60px;
+    background-position: 0px 0px;
+}
+.genero_opt_selected {
+    background-position: 0px -30px !important;
+}
+#perfil_notificaciones {
+    float: left;
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+#perfil_notificaciones table {
+    margin: 0 auto;
+    font-size: 14px;
+}
+#perfil_notificaciones table td {
+    vertical-align: middle;
+}
+#recibirNotificaciones_btn {
+    display: inline-block;
+    width: 75px;
+    height: 30px;
+    background: url(../images/btn_notificaciones.png) no-repeat;
+    background-size: 75px 60px;
+    background-position: 0px 0px;
+}
+.recibirNotificaciones_off {
+    background-position: 0px -30px !important;
+}
+.perfil_actions {
+    margin: 20px 0px;
+}
+#page_perfilDirecciones, #page_canasta_direcciones {
+    background: #000;
+}
+.direccion_item {
+    float: left;
+    width: 100%;
+    padding: 10px 5%;
+    border-bottom: 1px solid #fff;
+    font-family: 'mont_li';
+}
+.canasta_direccion_item {
+    float: left;
+    width: 100%;
+    padding: 10px 5%;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    background: #df2229;
+    font-family: 'mont_li';
+    text-align: center;
+}
+.direccion_item table {
+    float: left;
+    width: 100%;
+}
+.direccion_item table td {
+    padding: 0px 5px;
+    vertical-align: middle;
+}
+.direccion_item_ico {
+    text-align: right;
+}
+.direccion_borrar_btn {
+    display: block;
+    float: right;
+    width: 30px;
+    height: 30px;
+    background: url(../images/btn_borrar.png) no-repeat center;
+    background-size: 16px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+}
+.perfil_centrar {
+    text-align: center;
+}
+.noHistorial {
+    float: left;
+    width: 100%;
+    margin-top: 30px;
+    text-align: center;
+}
+#perfil_noregistrado_Registrarse {
+    display: none;
+}
+
+/* PAGE MODO DE PAGO */
+#page_modopago {
+    color: #000;
+}
+#modopago_title {
+    float: left;
+    width: 100%;
+    margin-top: 30px;
+    text-align: center;
+    font-size: 16px;
+}
+#modopago_Actual {
+    margin-top: 20px;
+    display: none;
+}
+.modopago_title {
+    float: left;
+    width: 100%;
+    margin-bottom: 10px;
+    color: #df2229;
+    text-align: center;
+}
+.modopago_item {
+    float: left;
+    width: 100%;
+    padding: 5px 0px;
+    border-top: 1px solid #000;
+}
+.modopago_item_number {
+    float: left;
+    width: 35%;
+    font-size: 16px;
+    padding-top: 7px;
+}
+.modopago_item_franquicia {
+    float: left;
+    height: 23px;
+    width: 25%;
+    text-align: center;
+    padding-top: 7px;
+}
+.modopago_item_franquicia img {
+    height: 100%;
+    width: auto;
+}
+.modopago_item_action {
+    float: right;
+    width: 30%;
+}
+#modopago_nuevo {
+    margin-top: 30px;
+    text-align: center;
+}
+.modopago_text {
+    float: left;
+    width: 100%;
+    margin-bottom: 10px;
+    text-align: center;
+}
+#modopagoact_franch img {
+    height: 30px;
+    width: auto;
+}
+#modopago_Nuevo {
+    margin-top: 20px;
+}
+.modopago_data_title {
+    float: left;
+    width: 100%;
+    text-align: center;
+}
+#modopago_Guardar {
+    float: left;
+    width: 100%;
+    margin: 0px 0px 20px 0px;
+    text-align: center;
+}
+#completarPerfil_title {
+    float: left;
+    width: 100%;
+    text-align: center;
+    margin: 20px 0px;
+    color: #000;
+}
+#completarPerfil_info {
+    float: left;
+    width: 100%;
+    color: #000000;
+    text-align: center;
+}
+
+/* PAGE INFO */
+#page_info {
+    background: #000;
+}
+#title_info {
+    background-image: url(../images/title_info.png);
+}
+#page_content_info {
+    padding-top: 50px;
+}
+.info_item {
+    float: left;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+    font-family: 'mont_li';
+    font-size: 16px;
+}
+.info_item_img {
+    float: left;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.info_item_img img {
+    width: 44px;
+    height: 44px;
+}
+.info_item_text {
+    float: left;
+    width: 100%;
+}
+.info_link {
+    color: #fff;
+}

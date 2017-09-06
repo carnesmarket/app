@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<widget xmlns   = "http://www.w3.org/ns/widgets"
+        xmlns:gap   = "http://phonegap.com/ns/1.0"
+        id          = "co.camellando.carnesmarket"
+        versionCode = "3"
+        version     = "1.2" >
+
+    <!-- versionCode para Android, siempre incrementar -->
+    <!-- version para todas las plataformas, siempre incrementar -->
+    
+    <name>CarnesMarket</name>
+
+    <description>
+        Carnes Market App
+    </description>
+
+    <author href="http://camellando.co" email="contacto@camellando.co">
+        Camellando
+    </author>
+    
+    <!-- Versión de Phonegap -->
+    <preference name="phonegap-version" value="cli-6.3.0" />
+    
+    <!-- Plataformas soportadas -->
+    <platform name="ios" />
+    <platform name="android" />
+    
+    <!-- MULTIPLATAFORMA -->
+    <preference name="orientation" value="portrait" />
+    <preference name="webviewbounce" value="false" />
+    <preference name="UIWebViewBounce" value="false" />
+    <preference name="DisallowOverscroll" value="true" />
+    
+    <access origin="tel:*" launch-external="yes" />
+    
+    <access origin="*://carnesmarket.co/*" />
+    <allow-navigation href="*://carnesmarket.co/*" />
+    <allow-intent href="*://carnesmarket.co/*" />
+    
+    <access origin="*://*.google.com/*" />
+    <allow-navigation href="*://*.google.com/*" />
+    <allow-intent href="*://*.google.com/*" />
+    
+    <access origin="*://*.googleapis.com/*" />
+    <allow-navigation href="*://*.googleapis.com/*" />
+    <allow-intent href="*://*.googleapis.com/*" />
+    
+    <access origin="*://*.gstatic.com/*" />
+    <allow-navigation href="*://*.gstatic.com/*" />
+    <allow-intent href="*://*.gstatic.com/*" />
+    
+    <access origin="*://*.akamaihd.net/*" />
+    <allow-navigation href="*://*.akamaihd.net/*" />
+    <allow-intent href="*://*.akamaihd.net/*" />
+    
+    <access origin="*://*.online-metrix.net/*" />
+    <allow-navigation href="*://*.online-metrix.net/*" />
+    <allow-intent href="*://*.online-metrix.net/*" />
+    
+    <access origin="whatsapp:*" launch-external="yes" />
+    <allow-navigation href="whatsapp:*" />
+    <allow-intent href="whatsapp:*" />
+    
+    <!-- iOS -->
+    <platform name="ios">
+        <preference name="detect-data-types" value="false" />
+        <preference name="target-device" value="universal" />
+        <preference name="deployment-target" value="7.0" />
+        <preference name="stay-in-webview" value="false" />
+    </platform>
+    
+    <!-- Android -->
+    <platform name="android">
+        <preference name="android-minSdkVersion" value="16" />
+        <preference name="android-installLocation" value="auto" />
+        <preference name="android-windowSoftInputMode" value="adjustResize" />
+        <preference name="android-build-tool" value="gradle" />
+    </platform>
+    
+    <!-- PLUGINS -->
+        <!-- Status Bar -->
+        <plugin name="cordova-plugin-statusbar" source="npm" spec="2.1.3" />
+        <preference name="StatusBarOverlaysWebView" value="false" />
+        <preference name="StatusBarBackgroundColor" value="#000000" />
+        <preference name="StatusBarStyle" value="lightcontent" />
+        <config-file platform="ios" parent="UIStatusBarHidden"><true/></config-file>
+        <config-file platform="ios" parent="UIViewControllerBasedStatusBarAppearance"><false/></config-file>
+    
+        <!--Alertas nativas -->
+        <plugin name="cordova-plugin-dialogs" source="npm" spec="1.2.1" />
+    
+        <!-- Whitelist external requests -->
+        <plugin name="cordova-plugin-whitelist" source="npm" spec="1.2.2" />
+    
+        <!-- Splashscreen -->
+        <plugin name="cordova-plugin-splashscreen" source="npm" spec="3.2.2" />
+        <preference name="SplashScreen" value="splash.png" />
+        <preference name="SplashScreenDelay" value="1000" />
+        <preference name="FadeSplashScreen" value="true"/>
+        <preference name="FadeSplashScreenDuration" value="200"/>
+        <preference name="ShowSplashScreenSpinner" value="false"/>
+        <platform name="android">
+            <preference name="SplashMaintainAspectRatio" value="true" />
+            <preference name="SplashShowOnlyFirstTime" value="true" />
+        </platform>
+    
+        <!-- Devices -->
+        <plugin name="cordova-plugin-device" source="npm" spec="1.1.2" />
+    
+        <!-- Push Notifications -->
+        <plugin name="onesignal-cordova-plugin" source="npm" spec="1.12.4" />
+    
+        <!-- Network Information -->
+        <plugin name="cordova-plugin-network-information" source="npm" spec="1.2.1" />
+    
+        <!-- Social Sharing -->
+        <plugin name="cordova-plugin-x-socialsharing" source="npm" spec="5.1.3" />
+    
+        <!-- Capture Camera -->
+        <plugin name="cordova-plugin-camera" source="npm" spec="2.3.1" >
+            <param name="CAMERA_USAGE_DESCRIPTION" value="Queremos usar tu cámara para que subas tu foto de perfil."/>
+            <param name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="Queremos usar tu librería de fotos para que subas tu foto de perfil."/>
+        </plugin>
+    
+        <!-- File Transfer -->
+        <plugin name="cordova-plugin-file-transfer" source="npm" spec="1.6.0" />
+    
+        <!-- inApp Browser -->
+        <plugin name="cordova-plugin-inappbrowser" source="npm" spec="1.4.0" />
+    
+        <!-- facebook connect iOS -->
+        <plugin name="cordova-plugin-facebook4" source="npm" spec="1.7.1" >
+            <param name="APP_ID" value="1766257156978381" />
+            <param name="APP_NAME" value="Carnes Market" />
+        </plugin>
+    
+        <!-- Geolocation -->
+        <plugin name="cordova-plugin-geolocation" source="npm" spec="2.2.0" />
+    
+        <!-- Keyboard -->
+        <plugin name="ionic-plugin-keyboard" source="npm" spec="2.2.1" />
+    
+        <!-- Contactos -->
+        <plugin name="cordova-plugin-contacts" source="npm" spec="2.2.0" />
+    
+        <!-- Crosswalk SOLO ANDROID 
+        <plugin name="cordova-plugin-crosswalk-webview" source="npm" spec="" />
+        -->
+    
+    <!-- END PLUGINS -->
+    
+    <!-- Icons -->
+    <icon src="icon.png" />
+    <platform name="ios">
+        <icon src="icon.png" width="57" height="57" />
+        <!-- iOS iPhone 6 / 6+ -->
+        <icon src="core/images/ios/icon-60@3x.png" width="180" height="180" />
+
+        <!-- iOS iPhone / iPod Touch  -->
+        <icon src="core/images/ios/icon-60.png" width="60" height="60" />
+        <icon src="core/images/ios/icon-60@2x.png" width="120" height="120" />
+
+        <!-- iOS iPad -->
+        <icon src="core/images/ios/icon-76.png" width="76" height="76" />
+        <icon src="core/images/ios/icon-76@2x.png" width="152" height="152" />
+
+        <!-- iOS Settings Icon -->
+        <icon src="core/images/ios/icon-small.png" width="29" height="29" />
+        <icon src="core/images/ios/icon-small@2x.png" width="58" height="58" />
+
+        <!-- iOS Spotlight Icon -->
+        <icon src="core/images/ios/icon-40.png" width="40" height="40" />
+        <icon src="core/images/ios/icon-40@2x.png" width="80" height="80" />
+    </platform>
+    <platform name="android">
+        <icon src="core/images/android/ldpi.png" gap:qualifier="ldpi" />
+        <icon src="core/images/android/mdpi.png" gap:qualifier="mdpi" />
+        <icon src="core/images/android/hdpi.png" gap:qualifier="hdpi" />
+        <icon src="core/images/android/xhdpi.png" gap:qualifier="xhdpi" />
+        <icon src="core/images/android/xxhdpi.png" gap:qualifier="xxhdpi" />
+        <icon src="core/images/android/fr-xxhdpi.png" gap:qualifier="fr-xxhdpi" />
+    </platform>
+    
+    <!-- SplashScreens -->
+    <splash src="splash.png" />
+    <platform name="ios">
+        <!-- iOS iPhone and iPod touch -->
+        <splash src="core/images/ios/Default.png" width="320" height="480" />
+        <splash src="core/images/ios/Default@2x.png" width="640" height="960" />
+
+        <!-- iOS iPhone 5 / iPod Touch (5th Generation) -->
+        <splash src="core/images/ios/Default-568h@2x.png" width="640" height="1136" />
+
+        <!-- iOS iPhone 6 -->
+        <splash src="core/images/ios/Default-667h@2x.png" width="750" height="1334" />
+        <splash src="core/images/ios/Default-Portrait-736h@3x.png" width="1242" height="2208" />
+
+        <!-- iOS iPad -->
+        <splash src="core/images/ios/Default-Portrait.png" width="768" height="1024" />
+
+        <!-- iOS Retina iPad -->
+        <splash src="core/images/ios/Default-Portrait@2x.png" width="1536" height="2048" />
+    </platform>
+    <platform name="android">
+        <splash src="core/images/android/splash/ldpi.png" gap:qualifier="ldpi" />
+        <splash src="core/images/android/splash/mdpi.png" gap:qualifier="mdpi" />
+        <splash src="core/images/android/splash/hdpi.png" gap:qualifier="hdpi" />
+        <splash src="core/images/android/splash/xhdpi.png" gap:qualifier="xhdpi" />
+        <splash src="core/images/android/splash/fr-xhdpi.png" gap:qualifier="fr-xhdpi" />
+        <splash src="core/images/android/splash/portrait-xxhdpi.png" gap:qualifier="port-xxhdpi" />
+    </platform>
+    
+    <!-- Para permitir links a facebook -->
+    <gap:config-file platform="ios" parent="NSAppTransportSecurity" mode="replace">
+        <dict>
+            <key>NSAllowsArbitraryLoads</key>
+            <true/>
+            <key>NSExceptionDomains</key>
+            <dict>
+                <key>facebook.com</key>
+                <dict>
+                    <key>NSIncludesSubdomains</key>
+                    <true/>                
+                    <key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
+                    <false/>
+                </dict>
+                <key>fbcdn.net</key>
+                <dict>
+                    <key>NSIncludesSubdomains</key>
+                    <true/>
+                    <key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
+                    <false/>
+                </dict>
+                <key>akamaihd.net</key>
+                <dict>
+                    <key>NSIncludesSubdomains</key>
+                    <true/>
+                    <key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
+                    <false/>
+                </dict>
+            </dict>
+        </dict>
+    </gap:config-file>
+    <gap:config-file platform="ios" parent="LSApplicationQueriesSchemes" mode="replace">
+       <array>
+           <string>fb</string>
+           <string>twitter</string>
+           <string>gplus</string>
+           <string>pintrest</string>
+           <string>instagram</string>
+           <string>youtube</string>
+           <string>vnd.youtube</string>
+           <string>yelp</string>
+           <string>linkedin</string>
+           <string>tumblr</string>
+           <string>whatsapp</string>
+           <string>snapchat</string>
+           <string>comgooglemaps</string>
+           <string>amazon</string>
+           <string>skype</string>
+           <string>googledrive</string>
+           <string>itms-apps</string>
+           <string>paypal</string>
+           <string>fbapi</string>
+           <string>fbapi20130214</string>
+           <string>fbapi20130410</string>
+           <string>fbapi20130702</string>
+           <string>fbapi20131010</string>
+           <string>fbapi20131219</string>    
+           <string>fbapi20140410</string>
+           <string>fbapi20140116</string>
+           <string>fbapi20150313</string>
+           <string>fbapi20150629</string>
+           <string>fbauth</string>
+           <string>fbauth2</string>
+           <string>fb-messenger-api20140430</string>
+           <string>fb-messenger-api</string>
+           <string>fbshareextension</string>
+       </array>
+   </gap:config-file>
+    
+</widget>

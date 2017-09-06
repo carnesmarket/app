@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>CARNES MARKET - User</title>
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+        <link rel="stylesheet" type="text/css" href="inc/jquery.mobile-1.4.5/jquery.mobile.custom.structure.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <script src="inc/jquery.js"></script>
+        <script src="inc/jquery.mobile-1.4.5/jquery.mobile.custom.min.js"></script>
+        <script src="inc/fastclick.js"></script>
+    </head>
+    <body>
+        <div class="app">
+        
+        	<div id="success-modal">
+                <p>¡ Tu registro fue exitoso !</p>
+            </div>
+            
+            <!-- LOADING -->
+            <div id="loading">
+                <div id="loading_gif"></div>
+            </div>
+            
+            <!-- MENÚ BOTTOM -->
+            <div class="menu_bottom">
+                <div class="menu_bottom_item">
+                    <a class="menu_bottom_btn menu_bottom_btn_selected" id="menu_bottom_tienda" href="#page_tienda" data-transition="none"></a>
+                </div>
+                <div class="menu_bottom_item menu_bottom_sep">
+                    <a class="menu_bottom_btn" id="menu_bottom_marcas" href="#page_marcas" data-transition="none"></a>
+                </div>
+                <div class="menu_bottom_item">
+                    <a class="menu_bottom_btn" id="menu_bottom_promos" href="#page_promos" data-transition="none"></a>
+                </div>
+                <div class="menu_bottom_item menu_bottom_sep">
+                    <a class="menu_bottom_btn" id="menu_bottom_pedidos" href="#page_pedidos" data-transition="none"></a>
+                </div>
+                <div class="menu_bottom_item">
+                    <a class="menu_bottom_btn" id="menu_bottom_perfil" href="#page_perfil" data-transition="none"></a>
+                </div>
+            </div>
+            
+            <!-- BUSCADOR -->
+            <div id="buscador_cont">
+                <div id="buscador_input">
+                    <div class="app_input_container"><input type="text" class="app_input" id="search_term" placeholder="¿Qué buscas?" autocapitalize="none"></div>
+                </div>
+                <div id="buscador_btn">
+                    <a class="app_button_black_full btn_30" id="btn_search"><span class="btn_1_red"><span class="btn_2_black">BUSCAR</span></span></a>
+                </div>
+                <div id="buscador_cerrar_cont">
+                    <div id="buscador_cerrar">X</div>
+                </div>
+            </div>
+            
+            <!-- MENU LATERAL -->
+            <!--
+            <div id="menuLateral_cont">
+                <div id="menuLateral_cerrar_cont">
+                    <div id="menuLateral_cerrar">X</div>
+                </div>
+                <div class="page_content" id="page_content_info">
+                    <div class="info_item">
+                        <div class="info_item_img contact_whatsapp"><img src="images/btn_wapp.png"></div>
+                        <div class="info_item_text contact_whatsapp">Whatsapp</div>
+                    </div>
+                    <div class="info_item">
+                        <div class="info_item_img contact_email"><img src="images/btn_mail.png"></div>
+                        <div class="info_item_text contact_email">Contáctanos</div>
+                    </div>
+                    <div class="info_item">
+                        <div class="info_item_img"><img src="images/btn_info.png"></div>
+                        <div class="info_item_text"><a class="info_link" id="ver_terminos" href="#page_terminos" data-transition="none">Términos y condiciones</a></div>
+                    </div>
+                    <div class="info_item">
+                        <div class="info_item_text"><a class="info_link" id="ver_privacidad" href="#page_privacidad" data-transition="none">Política de privacidad</a></div>
+                    </div>
+                </div>
+            </div>
+            -->
+            <div id="cobertura-modal">
+            	<div id="img-cobertura">
+                	<div id="cerrar-modalcober">X</div>
+                	<img src="https://carnesmarket.co/images/web/mapamodal.jpg" width="100%" />
+                </div>
+            </div>
+            
+            
+            <div id="menu-lateral">
+                <div class="content-lateral">
+
+                    <div class="modal-llamame">
+                        <div class="content-llamame">
+                            <div class="cerrar-menu1">X</div>
+                            <div id="error-nombrellamame" style="color:rgba(0,0,0,1.00);"></div>
+                            <input type="text" name="nombre" id="nombrellamame" placeholder="Digita tu nombre">
+                            <input type="text" name="tel" id="tellamame" placeholder="Digita tu teléfono">
+                            <div class="llamame-ya">Llamame</div>
+                        </div>
+                    </div>
+
+                    <div class="menu-perfil">
+                        <div class="cerrar-menu">X</div>
+                         <div id="perfil_profilePic1"></div>
+                        <div id="perfil-name"></div>
+                        <div class="btn-registro">
+                            <a class="btn-ingresar" id="btn_noreg_gotoLogin">Ingresar</a>
+                        </div>
+                    </div>
+                    <div class="menu-conte">
+                        <div class="div-menu">
+                            <img src="https://carnesmarket.co/images/web/habla_con_nosotros.png">
+                            <div class="menu-div" id="show_submenu">
+                                Habla Con Nosotros
+                            </div>
+                            <!--<div class="img-up"></div>-->
+                            <div class="submenu-hnosotros">
+                                <div class="menu-llamar"><a href="tel://3158248462" >Llamar</a></div>
+                                <div class="menu-llamar"><a id="llamame-1">Te llamamos</a></div>
+                                <div class="menu-llamar">
+                                    
+                                    <a class="linkcontact contact_whatsapp" href="#">WhatsApp</a></div>
+                            </div>
+                        </div>
+                        <div class="div-menu" id="cuenta-perfil">
+                            <img src="https://carnesmarket.co/images/web/mi_cuenta.png">
+                            <div class="menu-div">
+                                <a href="#page_perfil">Mi Cuenta</a>
+                            </div>
+                        </div>
+                        <div class="div-menu" id="cuenta-pedidos">
+                            <img src="https://carnesmarket.co/images/web/pedidos.png">
+                            <div class="menu-div">
+                                <a href="#page_pedidos">Pedidos</a>
+                            </div>
+                        </div>
+                        <div class="div-menu" id="cuenta-salir">
+                            <img src="https://carnesmarket.co/images/web/cobertura.png">
+                            <div class="menu-div">
+                                <a href="#" id="btn_cobertura">Cobertura</a>
+                            </div>
+                        </div>
+                        <div class="div-menu" id="ir-tienda">
+                            <img src="https://carnesmarket.co/images/web/tienda.png">
+                            <div class="menu-div">
+                                <a href="#page_tienda" id="btn_volvertienda">Ir a Tienda</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- MENÚ TIENDA -->
+            <div id="menu_tienda">
+                <div class="menu_tienda_item" id="menu_tienda_item_chef"><a id="menu_tienda_chef" href="#page_chef" data-transition="none"></a></div>
+                <div class="menu_tienda_item"><a class="menu_tienda_btn" id="menu_tienda_cerdo" href="#page_categoria_cerdo" data-transition="none"></a></div>
+                <div class="menu_tienda_item"><a class="menu_tienda_btn" id="menu_tienda_res" href="#page_categoria_res" data-transition="none"></a></div>
+                <div class="menu_tienda_item"><a class="menu_tienda_btn" id="menu_tienda_pollo" href="#page_categoria_pollo" data-transition="none"></a></div>
+                <div class="menu_tienda_item"><a class="menu_tienda_btn" id="menu_tienda_pez" href="#page_categoria_pez" data-transition="none"></a></div>
+                <div class="menu_tienda_item"><a class="menu_tienda_btn" id="menu_tienda_charc" href="#page_categoria_charc" data-transition="none"></a></div>
+            </div>
+            
+            <!-- PAGE TIENDA -->
+            <div data-role="page" id="page_tienda">
+                <div class="page_head" id="head_tienda">
+                    <div class="page_head_title" id="title_tienda"></div>
+                    <a class="btn_cart" href="#page_cart" data-transition="none"><div class="btn_cart_count"></div></a>
+                    <a class="btn_displaySearch"></a>
+                    <a class="btn_displayMenu1"></a>
+                    <!--<a class="btn_displayMenu"></a>-->
+                </div>
+                <div class="page_content page_content_tienda">
+                    <div class="full" id="tienda_items_title">Lo más vendido</div>
+                    <div class="full" id="masVendidos_items">
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <!-- PAGE CATEGORÍA CERDO -->
+            <div data-role="page" id="page_categoria_cerdo">
+                <div class="page_head" id="head_tienda">
+                    <a class="btn_back backTo_tienda" href="#page_tienda" data-transition="none"></a>
+                    <div class="page_head_title" id="title_tienda"></div>
+                    <a class="btn_cart" href="#page_cart" data-transition="none"><div class="btn_cart_count"></div></a>
+                    <a class="btn_displaySearch"></a>
+                </div>
+                <div class="page_content page_content_tienda">
+                    <div class="full" id="categoria_items">
+                        <div class="categoria_item" data-categoria="Magros cotidianos de cerdo">
+                            <div class="categoria_img" style="background-image:url(images/categorias/cerdo_magros_cotidianos.jpg)"></div>
+                            <div class="categoria_title">Magros cotidianos de cerdo</div>
+                            <div class="categoria_item_btn"></div>
+                        </div>
+                        <div class="categoria_item" data-categoria="Costillas de cerdo">
+                            <div class="categoria_img" style="background-image:url(images/categorias/cerdo_costillas.jpg)"></div>
+                            <div class="categoria_title">Costillas de cerdo</div>
+                            <div class="categoria_item_btn"></div>
+                        </div>
+                        <div class="categoria_item" data-categoria="Charcutería de cerdo">
+                            <div class="categoria_img" style="background-image:url(images/categorias/cerdo_charcuteria.jpg)"></div>
+                            <div class="categoria_title">Charcutería de cerdo</div>
+                            <div class="categoria_item_btn"></div>
+                        </div>
+                        <div class="categoria_item" data-categoria="Chuletas de cerdo">
+                            <div class="categoria_img" style="background-image:url(images/categorias/cerdo_chuletas.jpg)"></div>
+                            <div class="categoria_title">Chuletas de cerdo</div>
+                            <div class="categoria_item_btn"></div>
+                        </div>
+                        <div class="categoria_item" data-categoria="Prácticos de cerdo">
+                            <div class="categoria_img" style="background-image:url(images/categorias/cerdo_practicos.jpg)"></div>
+                            <div class="categoria_title">Prácticos de cerdo</div>
+                            <div class="categoria_item_btn"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- PAGE CATEGORÍA RES -->
+            <div data-role="page" id="page_categoria_res">
+                <div class="page_head" id="head_tienda">
+                    <a class="btn_back backTo_tienda" href="#page_tienda" data-transition="none"></a>
+                    <div class="page_head_title" id="title_tienda"></div>
+                    <a class="btn_cart" href="#page_cart" data-transition="none"><div class="btn_cart_count"></div></a>
+                    <a class="btn_displaySearch"></a>
+                </div>
+                <div class="page_content page_content_tienda">
+                    <div class="full" id="categoria_items">
+                        <div class="categoria_item" data-categoria="Cortes Premium de res">
+                            <div class="categoria_img" style="background-image:url(images/categorias/res_cortes_premium.jpg)"></div>
+                            <div class="categoria_title">Cortes Premium de res</div>
+                            <div class="categoria_item_btn"></div>
+                        </div>
+                        <div class="categoria_item" data-categoria="Parrilla de res">
+                            <div class="categoria_img" style="background-image:url(images/categorias/res_parrilla.jpg)"></div>
+                            <div class="categoria_title">Parrilla de res</div>
+                            <div class="categoria_item_btn"></div>
+                        </div>
+                        <div class="categoria_item" data-categoria="Cotidianos de res">
+                            <div class="categoria_img" style="background-image:url(images/categorias/res_cotidianos.jpg)"></div>
+                            <div class="categoria_title">Cotidianos de res</div>
+                            <div class="categoria_item_btn"></div>
+                        </div>
+                        <div class="categoria_item" data-categoria="Prácticos de res">
+                            <div class="categoria_img" style="background-image:url(images/categorias/res_practicos.jpg)"></div>
+                            <div class="categoria_title">Prácticos de res</div>
+                            <div class="categoria_item_btn"></div>
+                        </div>
+                        <div class="categoria_item" data-categoria="Charcutería de res">
+                            <div class="categoria_img" style="background-image:url(images/categorias/res_charcuteria.jpg)"></div>
+                            <div class="categoria_title">Charcutería de res</div>
+                            <div class="categoria_item_btn"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- PAGE CATEGORÍA POLLO -->
+            <div data-role="page" id="page_categoria_pollo">
+                <div class="page_head backTo_tienda" id="head_tienda">
+                    <a class="btn_back" href="#page_tienda" data-transition="none"></a>
+                    <div class="page_head_title" id="title_tienda"></div>
+                    <a class="btn_cart" href="#page_cart" data-transition="none"><div class="btn_cart_count"></div></a>
+                    <a class="btn_displaySearch"></a>
+                </div>
+                <div class="page_content page_content_tienda">
+                    <div class="full" id="categoria_items">
+                        <div class="categoria_item" data-categoria="Cotidianos de pollo">
+                            <div class="categoria_img" style="background-image:url(images/categorias/pollo_cotidianos.jpg)"></div>
+                            <div class="categoria_title">Cotidianos de pollo</div>
+                            <div class="categoria_item_btn"></div>
+                        </div>
+                        <div class="categoria_item" data-categoria="Filetes de pollo">
+                            <div class="categoria_img" style="background-image:url(images/categorias/pollo_filetes.jpg)"></div>
+                            <div class="categoria_title">Filetes de pollo</div>
+                            <div class="categoria_item_btn"></div>
+                        </div>
+                        <div class="categoria_item" data-categoria="Charcutería de pollo">
+                            <div class="categoria_img" style="background-image:url(images/categorias/pollo_charcuteria.jpg)"></div>
+                            <div class="categoria_title">Charcutería Mac Pollo</div>
+                            <div class="categoria_item_btn"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- PAGE CATEGORÍA PEZ -->
+            <div data-role="page" id="page_categoria_pez">
+                <div class="page_head" id="head_tienda">
+                    <a class="btn_back backTo_tienda" href="#page_tienda" data-transition="none"></a>
+                    <div class="page_head_title" id="title_tienda"></div>
+                    <a class="btn_cart" href="#page_cart" data-transition="none"><div class="btn_cart_count"></div></a>
+                    <a class="btn_displaySearch"></a>
+                </div>
+                <div class="page_content page_content_tienda">
+                    <div class="full" id="categoria_items">
+                        <div class="categoria_item" data-categoria="Pescados">
+                            <div class="categoria_img" style="background-image:url(images/categorias/pez_pescado.jpg)"></div>
+                            <div class="categoria_title">Pescados</div>
+                            <div class="categoria_item_btn"></div>
+                        </div>
+                        <div class="categoria_item" data-categoria="Mariscos">
+                            <div class="categoria_img" style="background-image:url(images/categorias/pez_mariscos.jpg)"></div>
+                            <div class="categoria_title">Mariscos</div>
+                            <div class="categoria_item_btn"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- PAGE CATEGORÍA CHARCUTERÍA -->
+            <div data-role="page" id="page_categoria_charc">
+                <div class="page_head" id="head_tienda">
+                    <a class="btn_back backTo_tienda" href="#page_tienda" data-transition="none"></a>
+                    <div class="page_head_title" id="title_tienda"></div>
+                    <a class="btn_cart" href="#page_cart" data-transition="none"><div class="btn_cart_count"></div></a>
+                    <a class="btn_displaySearch"></a>
+                </div>
+                <div class="page_content page_content_tienda">
+                    <div class="full" id="categoria_items">
+                        <div class="categoria_item" data-categoria="Charcutería Koller">
+                            <div class="categoria_img" style="background-image:url(images/categorias/charcuteria_koller.jpg)"></div>
+                            <div class="categoria_title">Charcutería Koller</div>
+                            <div class="categoria_item_btn"></div>
+                        </div>
+                        <div class="categoria_item" data-categoria="Charcutería de cerdo">
+                            <div class="categoria_img" style="background-image:url(images/categorias/charcuteria_cerdo.jpg)"></div>
+                            <div class="categoria_title">Charcutería de cerdo</div>
+                            <div class="categoria_item_btn"></div>
+                        </div>
+                        <div class="categoria_item" data-categoria="Charcutería de res">
+                            <div class="categoria_img" style="background-image:url(images/categorias/charcuteria_res.jpg)"></div>
+                            <div class="categoria_title">Charcutería de res</div>
+                            <div class="categoria_item_btn"></div>
+                        </div>
+                        <div class="categoria_item" data-categoria="Charcutería de pollo">
+                            <div class="categoria_img" style="background-image:url(images/categorias/charcuteria_pollo.jpg)"></div>
+                            <div class="categoria_title">Charcutería Mac Pollo</div>
+                            <div class="categoria_item_btn"></div>
+                        </div>
+                        <!--<div class="categoria_item" data-categoria="Charcutería de pavo">
+                            <div class="categoria_img" style="background-image:url(images/categorias/charcuteria_pavo.jpg)"></div>
+                            <div class="categoria_title">Charcutería Delipavo</div>
+                            <div class="categoria_item_btn"></div>
+                        </div>-->
+                    </div>
+                </div>
+            </div>
+            
+            <!-- PAGE PRODUCTOS -->
+            <div data-role="page" id="page_productos">
+                <div class="page_head" id="head_tienda">
+                    <a class="btn_back" data-rel="back" data-transition="none"></a>
+                    <div class="page_head_title" id="title_tienda"></div>
+                    <a class="btn_cart" href="#page_cart" data-transition="none"><div class="btn_cart_count"></div></a>
+                    <a class="btn_displaySearch"></a>
+                </div>
+                <div class="page_content page_content_tienda">
+                    <div class="full" id="productos_items">
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <!-- PAGE PRODUCTOS DETALLE -->
+            <div data-role="page" id="page_productos_detalle">
+                <div class="page_head" id="head_tienda">
+                    <a class="btn_back" data-rel="back" data-transition="none"></a>
+                    <div class="page_head_title" id="title_tienda"></div>
+                    <a class="btn_cart" href="#page_cart" data-transition="none"><div class="btn_cart_count"></div></a>
+                    <a class="btn_displaySearch"></a>
+                </div>
+                <div class="page_content page_content_tienda">
+                    <div id="product_img">
+                        <div id="product_category"></div>
+                        <a class="app_button_black btn_30" id="btn_shareProduct"><span class="btn_1_red"><span class="btn_2_black">COMPARTIR</span></span></a>
+                    </div>
+                    <div id="product_title"></div>
+                    <div id="product_price"></div>
+                    <div id="product_presentation"></div>
+                    <div id="product_agregar">
+                        <div class="half">
+                            <div id="product_agregar_title">Cant.</div>
+                            <div class="count_input_container"><input type="number" pattern="[0-9]*" class="count_input" id="product_cantidad" placeholder="0"></div>
+                        </div>
+                        <div class="half">
+                            <div id="product_agregar_btn"></div>
+                            <div id="product_agregar_btnTitle">Añadir</div>
+                        </div>
+                    </div>
+                    <div id="product_description"></div>
+                </div>
+            </div>
+            
+            <!-- PAGE CHEF -->
+            <div data-role="page" id="page_chef">
+                <div class="page_head" id="head_tienda">
+                    <div class="page_head_title" id="title_chef"></div>
+                    <a class="btn_cart" href="#page_cart" data-transition="none"><div class="btn_cart_count"></div></a>
+                    <a class="btn_displaySearch"></a>
+                    <a class="btn_displayMenu1"></a>
+                    <!--<a class="btn_displayMenu"></a>-->
+                </div>
+                <div class="page_content">
+                    <div class="padding_5">
+                        <div id="chef_title">
+                            <div id="chef_title_top">CALCULADORA DEL CHEF</div>
+                            <div id="chef_title_bottom">¿No sabes cuánta y<br>qué carne comprar?</div>
+                        </div>
+                        <div id="chef_description">
+                            Nuestro Chef Virtual te asesora<br>para armar tu mercado
+                        </div>
+                        <div id="chef_form_cont">
+                            <div id="chef_circle"></div>
+                            <div class="chef_btn chef_btn_selected" id="chef_gotoPersonas"></div>
+                            <div class="chef_btn" id="chef_gotoPreferencias"></div>
+                            <div class="chef_btn" id="chef_gotoDias"></div>
+                            <div class="chef_btn" id="chef_gotoComidas"></div>
+                            <div class="chef_part" id="chef_personas">
+                                <div class="chef_agregarbtn" id="chef_agregarPersonas"></div>
+                                <div class="chef_quitarbtn" id="chef_quitarPersonas"></div>
+                                <div id="chef_PersonasCant" data-personas="1">1</div>
+                            </div>
+                            <div class="chef_part" id="chef_preferencias">
+                                <div class="chef_preferencias_btn" id="chef_preferencias_cerdo" data-preferencia="Cerdo"></div>
+                                <div class="chef_preferencias_btn" id="chef_preferencias_res" data-preferencia="Res"></div>
+                                <div class="chef_preferencias_btn" id="chef_preferencias_pollo" data-preferencia="Pollo"></div>
+                                <div class="chef_preferencias_btn" id="chef_preferencias_pez" data-preferencia="Pescado"></div>
+                                <div class="chef_preferencias_btn" id="chef_preferencias_charc" data-preferencia="Charcutería"></div>
+                            </div>
+                            <div class="chef_part" id="chef_dias">
+                                <div class="chef_agregarbtn" id="chef_agregarDias"></div>
+                                <div class="chef_quitarbtn" id="chef_quitarDias"></div>
+                                <div id="chef_DiasCant" data-dias="1">1</div>
+                            </div>
+                            <div class="chef_part" id="chef_comidas">
+                                <div id="chef_comidas_selCont">
+                                    <select id="chef_comidasCant">
+                                        <option value="1">Solo almuerzo</option>
+                                        <option value="2">Almuerzo y cena</option>
+                                        <option value="3">Desayuno, almuerzo y cena</option>
+                                    </select>
+                                    <div id="chef_comidasCant_text">Solo almuerzo</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="chef_btn_cont">
+                            <a class="app_button_red btn_44" id="btn_verSugerencias"><span class="btn_1_red"><span class="btn_2_red">ARMAR PAQUETE</span></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- PAGE CHEF SUGERENCIAS -->
+            <div data-role="page" id="page_chef_sugerencias">
+                <div class="page_head" id="head_tienda">
+                    <a class="btn_back" data-rel="back" data-transition="none"></a>
+                    <div class="page_head_title" id="title_chef"></div>
+                    <a class="btn_cart" href="#page_cart" data-transition="none"><div class="btn_cart_count"></div></a>
+                    <a class="btn_displaySearch"></a>
+                </div>
+                <div id="chef_filtros">
+                    <div class="chef_filtro" id="chef_variedad">Variedad</div>
+                    <div class="chef_filtro" id="chef_premium">Premium</div>
+                    <div class="chef_filtro" id="chef_fit">Fit</div>
+                    <div class="chef_filtro" id="chef_economico">Económico</div>
+                </div>
+                <div class="page_content" id="page_content_sugerencias">
+                    <div class="full" id="sugerencias_items">
+                        
+                    </div>
+                </div>
+                <div id="chef_agregar">
+                    <div id="chef_agregar_info_personas">
+                        <div class="chef_agregar_img"><img src="images/chef_1_ico.png"></div>
+                        <div class="chef_agregar_info_num" id="chef_agregar_personas"></div>
+                        <div class="chef_agregar_info_sub">Personas</div>
+                    </div>
+                    <div id="chef_agregar_info_preferencias">
+                        <table>
+                            <tr>
+                                <td id="chef_info_prefs">
+                                    
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="chef_agregar_info_dias">
+                        <div class="chef_agregar_img"><img src="images/chef_3_ico.png"></div>
+                        <div class="chef_agregar_info_num" id="chef_agregar_dias"></div>
+                        <div class="chef_agregar_info_sub">Días</div>
+                    </div>
+                    <div id="chef_agregar_info_comidas">
+                        <div class="chef_agregar_img"><img src="images/chef_4_ico.png"></div>
+                        <div id="chef_agregar_comidas"></div>
+                    </div>
+                    <div id="chef_agregar_info_total">
+                        <div id="chef_agregar_info_total_title">TOTAL</div>
+                        <div id="chef_agregar_info_total_precio">$250.000</div>
+                        <a class="app_button_red_full btn_30" id="agregar_chef"><span class="btn_1_red"><span class="btn_2_red_30">AGREGAR</span></span></a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- PAGE MARCAS -->
+            <div data-role="page" id="page_marcas">
+                <div class="page_head" id="head_tienda">
+                    <div class="page_head_title" id="title_marcas"></div>
+                    <a class="btn_cart" href="#page_cart" data-transition="none"><div class="btn_cart_count"></div></a>
+                    <a class="btn_displaySearch"></a>
+                    <a class="btn_displayMenu1"></a>
+                    <!--<a class="btn_displayMenu"></a>-->
+                </div>
+                <div class="page_content">
+                    <div class="full" id="marcas_items">
+                        <div class="marcas_item">
+                            <img src="images/marcas/ancla_y_viento.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- PAGE PROMOS -->
+            <div data-role="page" id="page_promos">
+                <div class="page_head" id="head_tienda">
+                    <div class="page_head_title" id="title_promos"></div>
+                    <a class="btn_cart" href="#page_cart" data-transition="none"><div class="btn_cart_count"></div></a>
+                    <a class="btn_displaySearch"></a>
+                    <a class="btn_displayMenu1"></a>
+                    <!--<a class="btn_displayMenu"></a>-->
+                </div>
+                <div class="page_content">
+                    <div class="full" id="promos_items">
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <!-- PAGE CANASTA -->
+            <div data-role="page" id="page_canasta_1">
+                <div class="page_head" id="head_tienda">
+                    <div class="page_head_title" id="title_canasta"></div>
+                    <a class="btn_cart" href="#page_cart" data-transition="none"><div class="btn_cart_count"></div></a>
+                    <a class="btn_displaySearch"></a>
+                    <a class="btn_displayMenu1"></a>
+                    <!--<a class="btn_displayMenu"></a>-->
+                </div>
+                <div class="page_content padding_5">
+                    <div class="canasta_title">Descripción del pedido </div>
+                    <div class="carrito_titles">
+                        <div class="carrito_title_agregar">&nbsp;</div>
+                        <div class="carrito_title_cantidad">Cant.</div>
+                        <div class="carrito_title_producto">Producto</div>
+                        <div class="carrito_title_costo">Costo</div>
+                    </div>
+                    <div class="canasta_items" id="canasta_1_items" style="margin-bottom:100px;">
+                        
+                    </div>
+                    <div class="full continuar-float" id="canasta_1_footer">
+                        <div class="half" id="canasta_1_total_title">
+                            Total
+                        </div>
+                        <div class="half" id="canasta_1_total">
+                            
+                        </div>
+                        <div class="half canasta_continuar_cont">
+                            <a class="app_button_red btn_30" id="goto_canasta_2" data-transition="none"><span class="btn_1_red"><span class="btn_2_red_30">CONTINUAR</span></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- PAGE CANASTA 2 -->
+            <div data-role="page" id="page_canasta_2">
+                <div class="page_head" id="head_tienda">
+                    <a class="btn_back" href="#page_canasta_1" data-transition="none"></a>
+                    <div class="page_head_title" id="title_canasta"></div>
+                    <a class="btn_cart" href="#page_cart" data-transition="none"><div class="btn_cart_count"></div></a>
+                    <a class="btn_displaySearch"></a>
+                </div>
+                <div class="page_content padding_5">
+                    <div class="canasta_title">Datos de la entrega</div>
+                    <div id="mapa_cobertura">
+                         <span style="color: black;">Cobertura inicial solo en Bogotá</span>
+                         <a id="btn_cobertura1" style="text-decoration: underline;color:red;">Ver Cobertura</a>
+                    </div>
+                    <div class="full" id="canasta_2_form">
+                        <div class="input_title">fecha de entrega</div>
+                        <div class="canasta_input_container" style="color:rgba(238,5,9,1.00)"><input type="date" class="canasta_input" id="pedido_fechaEntrega" placeholder="Fecha de entrega"></div>
+                        <div class="canasta_input_container" style="color:rgba(238,5,9,1.00)">
+                            <select class="canasta_input" id="pedido_horaEntrega">
+                                <option value="1">10:00am - 12:00pm</option>
+                                <option value="2">02:00pm - 04:00pm</option>
+                                <option value="3">04:00pm - 06:00pm</option>
+                                <option value="4">06:00pm - 08:00pm</option>
+                            </select>
+                        </div>
+                        <div id="anuncioMismoDia">* Los pedidos el mismo día tienen un costo de envío de $10.000</div>
+                        <div class="canasta_input_container"><input type="text" class="canasta_input" id="pedido_direccionEntrega" placeholder="Dirección de entrega"></div>
+                        <div id="canasta_modopago_cont">
+                            <table>
+                                <tr>
+                                    <td class="canasta_mosopago_title">Datáfono</td>
+                                    <td class="canasta_mosopago_title">Online</td>
+                                    <td class="canasta_mosopago_title">Efectivo</td>
+                                </tr>
+                                <tr>
+                                    <td><a class="modopago_opt modopago_opt_selected" data-modopago="0"></a></td>
+                                    <td><a class="modopago_opt" data-modopago="1"></a></td>
+                                    <td><a class="modopago_opt" data-modopago="3"></a></td>
+                                </tr>
+                            </table>
+                            <input type="hidden" id="pedido_modoPago" value="0">
+                        </div>
+                    </div>
+                    <div class="full">
+                        <div class="half canasta_continuar_cont">
+                            <a class="app_button_red btn_30" id="goto_canasta_3" data-transition="none"><span class="btn_1_red"><span class="btn_2_red_30">CONTINUAR</span></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- PAGE CANASTA DIRECCIONES -->
+            <div data-role="page" id="page_canasta_direcciones">
+                <div class="page_head" id="head_tienda">
+                    <a class="btn_back" href="#page_canasta_2" data-transition="none"></a>
+                    <div class="page_head_title" id="title_canasta"></div>
+                    <a class="btn_cart" href="#page_cart" data-transition="none"><div class="btn_cart_count"></div></a>
+                    <a class="btn_displaySearch"></a>
+                </div>
+                <div class="page_content">
+                    <div class="padding_5" id="canasta_direcciones_items">
+                        
+                    </div>
+                    <div class="padding_5 perfil_actions perfil_centrar">
+                        <a class="app_button_red btn_44" id="btn_nuevaDireccion" href="#page_canasta_map" data-transition="none"><span class="btn_1_red"><span class="btn_2_red">NUEVA DIRECCIÓN</span></span></a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- PAGE CANASTA MAPA -->
+            <div data-role="page" id="page_canasta_map">
+                <div class="page_head" id="head_tienda">
+                    <a class="btn_back" data-rel="back" data-transition="none"></a>
+                    <div class="page_head_title" id="title_canasta"></div>
+                    <a class="btn_cart" href="#page_cart" data-transition="none"><div class="btn_cart_count"></div></a>
+                    <a class="btn_displaySearch"></a>
+                </div>
+                <div class="page_content">
+                    <div id="canasta_map"></div>
+                    <div id="map_direccion">
+                        <div id="pedido_direccionMapa_1">
+                            <div class="geo_input_container">
+                                <select class="app_input geodeco_field" id="geo_dir_1">
+                                    <option value="Calle">Cll.</option>
+                                    <option value="Carrera">Cra.</option>
+                                    <option value="Avenida">Av.</option>
+                                    <option value="Avenida Carrera">Av. Cra.</option>
+                                    <option value="Avenida Calle">Av. Cll.</option>
+                                    <option value="Circular">Circular</option>
+                                    <option value="Circunvalar">Circunv.</option>
+                                    <option value="Diagonal">Diag.</option>
+                                    <option value="Manzana">Manz.</option>
+                                    <option value="Transversal">Transv.</option>
+                                    <option value="Vía">Via</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div id="pedido_direccionMapa_2">
+                            <div class="geo_input_container"><input type="text" class="app_input geodeco_field" id="geo_dir_2"></div>
+                            <input type="hidden" id="geo_dir_3" value="Norte">
+                        </div>
+                        <div id="pedido_direccionMapa_3">
+                            #
+                        </div>
+                        <div id="pedido_direccionMapa_4">
+                            <div class="geo_input_container"><input type="text" class="app_input geodeco_field" id="geo_dir_4"></div>
+                        </div>
+                        <div id="pedido_direccionMapa_5">
+                            -
+                        </div>
+                        <div id="pedido_direccionMapa_6">
+                            <div class="geo_input_container"><input type="text" class="app_input geodeco_field" id="geo_dir_5"></div>
+                        </div>
+                        <div id="pedido_direccionMapa_7">
+                            <div class="app_input_container"><input type="text" class="app_input" id="geo_dir_6" placeholder="Interior/Apto/Oficina..."></div>
+                        </div>
+                    </div>
+                    <div id="map_footer">
+                        <div class="half">
+                            <a class="app_button_black_full btn_30" id="btn_showMisDirecciones"><span class="btn_1_red"><span class="btn_2_black">MIS DIRECCIONES</span></span></a>
+                        </div>
+                        <div class="half">
+                            <a class="app_button_red_full btn_30" id="btn_saveAddress"><span class="btn_1_red"><span class="btn_2_red_30">CONTINUAR</span></span></a>
+                        </div>
+                    </div>
+                    <div id="direcciones_save_cont">
+                        <a class="app_button_red_full btn_30" id="btn_saveNewAddress"><span class="btn_1_red"><span class="btn_2_red_30">GUARDAR ESTA DIRECCIÓN</span></span></a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- PAGE CANASTA 3 -->
+            <div data-role="page" id="page_canasta_3">
+                <div class="page_head" id="head_tienda">
+                    <a class="btn_back" href="#page_canasta_2" data-transition="none"></a>
+                    <div class="page_head_title" id="title_canasta"></div>
+                    <a class="btn_cart" href="#page_cart" data-transition="none"><div class="btn_cart_count"></div></a>
+                    <a class="btn_displaySearch"></a>
+                </div>
+                <div class="page_content">
+                    <div class="canasta_title canasta_title_padding">Revisión del pedido</div>
+                    <div class="full">
+                        <div class="carrito_titles">
+                            <div class="carrito_title_cantidad">Cant.</div>
+                            <div class="carrito_title_producto">Producto</div>
+                            <div class="carrito_title_costo">Costo</div>
+                        </div>
+                        <div class="canasta_items" id="canasta_3_items">
+                            
+                        </div>
+                    </div>
+                    <div class="full" id="carrito_3_datos">
+                        <div class="half border_red_left">
+                            <div class="carrito_3_datos_title">Subtotal</div>
+                            <div class="carrito_3_datos_text" id="carrito_3_datos_subtotal"></div>
+                        </div>
+                        <div class="half border_red_right">
+                            <div class="carrito_3_datos_title">Envío</div>
+                            <div class="carrito_3_datos_text" id="carrito_3_datos_envio"></div>
+                        </div>
+                        <div class="full border_red_bottom">
+                            <div class="carrito_3_datos_title">Descuento</div>
+                            <div class="carrito_3_datos_text" id="carrito_3_datos_descuento"></div>
+                        </div>
+                        <div class="full border_red_bottom">
+                            <div class="carrito_3_datos_title">TOTAL</div>
+                            <div class="carrito_3_datos_text" id="carrito_3_datos_total"></div>
+                        </div>
+                        <div class="half border_red_left">
+                            <div class="carrito_3_datos_title">Fecha de entrega</div>
+                            <div class="carrito_3_datos_text" id="carrito_3_datos_fecha"></div>
+                        </div>
+                        <div class="half border_red_right">
+                            <div class="carrito_3_datos_title">Hora de entrega</div>
+                            <div class="carrito_3_datos_text" id="carrito_3_datos_hora"></div>
+                        </div>
+                        <div class="full border_red_bottom">
+                            <div class="carrito_3_datos_title">Dirección</div>
+                            <div class="carrito_3_datos_text" id="carrito_3_datos_direccion"></div>
+                        </div>
+                        <div class="full border_red_bottom">
+                            <div class="carrito_3_datos_title">Modo de pago</div>
+                            <div class="carrito_3_datos_text" id="carrito_3_datos_modopago"></div>
+                        </div>
+                    </div>
+                    <div class="padding_5" id="carrito_3_cupon_cont">
+                        <div class="half_first">
+                            <div class="canasta_input_container">
+                                <input type="text" class="canasta_input" id="pagar_cupon" placeholder="Cupón" autocapitalize="none">
+                            </div>
+                        </div>
+                        <div class="half_last">
+                            <a class="app_button_black_full btn_30" id="btn_aplicarCupon"><span class="btn_1_red"><span class="btn_2_black">APLICAR</span></span></a>
+                        </div>
+                    </div>
+                    <div class="full" id="carrito_3_pagoToken_cont">
+                        <div class="carrito_3_datos_title">Tu modo de pago</div>
+                        <div class="full padding_5">
+                            <div class="canasta_input_container">
+                                <select class="canasta_input" id="carrito3_modopago">
+                                    
+                                </select>
+                            </div>
+                        </div>
+                        <div class="half_first">
+                            <div class="canasta_input_container"><input type="number" pattern="[0-9]*" class="canasta_input" id="pagar_codigoSeguridad" placeholder="Cód. seguridad"></div>
+                        </div>
+                        <div class="half_last">
+                            <div class="canasta_input_container"><input type="number" pattern="[0-9]*" class="canasta_input" id="pagar_cuotas" placeholder="Cuotas"></div>
+                        </div>
+                    </div>
+                    <div class="padding_5" id="carrito_3_captcha">
+                        <div class="full" id="captcha_pregunta">
+                            Responde: ¿Cuánto es 10-5?
+                        </div>
+                        <div class="full">
+                            <div class="canasta_input_container">
+                                <input type="number" class="canasta_input" id="captcha_rta" value="0">
+                            </div>
+                        </div>
+                    </div>
+                    <div style="height:20px;width:100%;">
+                    </div>
+                    <div class="full" id="canasta_3_footer">
+                        <a class="app_button_red btn_44 hacerp-flot" id="btn_realizarPedido"><span class="btn_1_red"><span class="btn_2_red">HACER PEDIDO</span></span></a>
+                    </div>
+                    <div id="info_iatai"></div>
+                </div>
+            </div>
+            
+            <!-- PAGE CANASTA 4 -->
+            <div data-role="page" id="page_canasta_4">
+                <div class="page_head" id="head_tienda">
+                    <div class="page_head_title" id="title_canasta"></div>
+                </div>
+                <div class="page_content">
+                    <div class="full" id="canasta_completo">
+                        <div id="canasta_completo_1">Confirmación del pedido</div>
+                        <div id="canasta_completo_2">Su pedido ha sido<br>registrado éxitosamente</div>
+                        <div id="canasta_completo_volver">
+                            <a class="app_button_red btn_44" href="#page_tienda" data-transition="none"><span class="btn_1_red"><span class="btn_2_red">VOLVER A LA TIENDA</span></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- PAGE PEDIDOS -->
+            <div data-role="page" id="page_pedidos">
+                <div class="page_head" id="head_tienda">
+                    <div class="page_head_title" id="title_pedidos"></div>
+                    <a class="btn_cart" href="#page_cart" data-transition="none"><div class="btn_cart_count"></div></a>
+                    <a class="btn_displaySearch"></a>
+                    <a class="btn_displayMenu1"></a>
+                    <!--<a class="btn_displayMenu"></a>-->
+                </div>
+                <div class="page_content">
+                    <div class="full" id="pedidos_title">
+                        <div class="pedido_title_estado">Estado</div>
+                        <div class="pedido_title_fecha">Fecha</div>
+                        <div class="pedido_title_id">ID</div>
+                    </div>
+                    <div class="full" id="pedidos_items">
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <!-- PAGE PEDIDOS DETALLE -->
+            <div data-role="page" id="page_pedidos_detalle">
+                <div class="page_head" id="head_tienda">
+                    <a class="btn_back" href="#page_pedidos" data-transition="none"></a>
+                    <div class="page_head_title" id="title_pedidos"></div>
+                    <a class="btn_cart" href="#page_cart" data-transition="none"><div class="btn_cart_count"></div></a>
+                    <a class="btn_displaySearch"></a>
+                </div>
+                <div class="page_content padding_5">
+                    <div id="pedido_detalle_id"></div>
+                    <div class="full">
+                        <div class="carrito_titles">
+                            <div class="carrito_title_cantidad">Cant.</div>
+                            <div class="carrito_title_producto">Producto</div>
+                            <div class="carrito_title_costo">Costo</div>
+                        </div>
+                        <div class="canasta_items" id="canasta_pedido_items">
+                            
+                        </div>
+                    </div>
+                    <div class="full" id="carrito_3_datos">
+                        <div class="half border_red_left">
+                            <div class="carrito_3_datos_title">Subtotal</div>
+                            <div class="carrito_3_datos_text" id="pedido_datos_subtotal"></div>
+                        </div>
+                        <div class="half border_red_right">
+                            <div class="carrito_3_datos_title">Envío</div>
+                            <div class="carrito_3_datos_text" id="pedido_datos_envio"></div>
+                        </div>
+                        <div class="full border_red_bottom">
+                            <div class="carrito_3_datos_title">Descuento</div>
+                            <div class="carrito_3_datos_text" id="pedido_datos_descuento"></div>
+                        </div>
+                        <div class="full border_red_bottom">
+                            <div class="carrito_3_datos_title">TOTAL</div>
+                            <div class="carrito_3_datos_text" id="pedido_datos_total"></div>
+                        </div>
+                        <div class="half border_red_left">
+                            <div class="carrito_3_datos_title">Fecha de entrega</div>
+                            <div class="carrito_3_datos_text" id="pedido_datos_fecha"></div>
+                        </div>
+                        <div class="half border_red_right">
+                            <div class="carrito_3_datos_title">Hora de entrega</div>
+                            <div class="carrito_3_datos_text" id="pedido_datos_hora"></div>
+                        </div>
+                        <div class="full border_red_bottom">
+                            <div class="carrito_3_datos_title">Dirección</div>
+                            <div class="carrito_3_datos_text" id="pedido_datos_direccion"></div>
+                        </div>
+                        <div class="half border_red_left">
+                            <div class="carrito_3_datos_title">Modo de pago</div>
+                            <div class="carrito_3_datos_text" id="pedido_datos_modopago"></div>
+                        </div>
+                        <div class="half border_red_right">
+                            <div class="carrito_3_datos_title">Estado pago</div>
+                            <div class="carrito_3_datos_text" id="pedido_datos_estadoPago"></div>
+                        </div>
+                    </div>
+                    <div class="full" id="pedido_detalle_footer">
+                        <div class="full">
+                            <a class="app_button_red btn_44" id="btn_pedirDeNuevo"><span class="btn_1_red"><span class="btn_2_red">PEDIR DE NUEVO</span></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- PAGE PERFIL -->
+            <div data-role="page" id="page_perfil">
+                <div class="page_head" id="head_tienda">
+                    <div class="page_head_title" id="title_perfil"></div>
+                    <a class="btn_displayMenu1"></a>
+                    <!--<a class="btn_displayMenu"></a>-->
+                </div>
+                <div class="page_content">
+                    <div id="perfil_bg"></div>
+                    <div id="perfil_info">
+                        <div id="perfil_profilePic">
+                            <div id="perfil_camera"></div>
+                        </div>
+                        <div class="padding_5 perfil_actions">
+                            <div class="half">
+                                <a class="app_button_black_full btn_30" id="btn_gotomodopago"><span class="btn_1_red"><span class="btn_2_black">MODO DE PAGO</span></span></a>
+                            </div>
+                            <div class="half">
+                                <a class="app_button_black_full btn_30" id="btn_gotoDirecciones"><span class="btn_1_red"><span class="btn_2_black">MIS DIRECCIONES</span></span></a>
+                            </div>
+                        </div>
+                        <div id="perfil_nombre"></div>
+                        <div id="perfil_correo"></div>
+                        <div id="perfil_celular"></div>
+                        <div class="padding_5 perfil_actions">
+                            <div class="half">
+                                <a class="app_button_black_full btn_30" id="btn_cerrarSesion"><span class="btn_1_red"><span class="btn_2_black">CERRAR SESIÓN</span></span></a>
+                            </div>
+                            <div class="half">
+                                <a class="app_button_red_full btn_30" id="btn_editarPerfil" href="#page_editarPerfil" data-transition="none"><span class="btn_1_red"><span class="btn_2_red_30">EDITAR PERFIL</span></span></a>
+                            </div>
+                        </div>
+                        <div class="full" id="perfil_noregistrado_Registrarse">
+                            <a class="app_button_red btn_44" id="btn_noreg_gotoLogin"><span class="btn_1_red"><span class="btn_2_red">REGISTRARSE</span></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- PAGE MIS DIRECCIONES -->
+            <div data-role="page" id="page_perfilDirecciones">
+                <div class="page_head" id="head_tienda">
+                    <a class="btn_back" href="#page_perfil" data-transition="none"></a>
+                    <div class="page_head_title" id="title_perfil"></div>
+                </div>
+                <div class="page_content">
+                    <div class="full" id="direcciones_items">
+                        
+                    </div>
+                    <div class="padding_5 perfil_actions">
+                        <div class="half half_minheight">
+                            <a class="app_button_black_full btn_30" id="btn_gotoAgregarDir" data-transition="none"><span class="btn_1_red"><span class="btn_2_black">AGREGAR NUEVA</span></span></a>
+                        </div>
+                        <div class="half">
+                            <a class="app_button_red_full btn_30" id="btn_guardarDirecciones" data-transition="none"><span class="btn_1_red"><span class="btn_2_red_30">ACTUALIZAR</span></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- PAGE EDITAR PERFIL -->
+            <div data-role="page" id="page_editarPerfil">
+                <div class="page_head" id="head_tienda">
+                    <a class="btn_back" href="#page_perfil" data-transition="none"></a>
+                    <div class="page_head_title" id="title_perfil"></div>
+                </div>
+                <div class="page_content">
+                    <div id="perfil_info">
+                        <div class="canasta_input_container"><input type="email" class="canasta_input" id="perfil_editarEmail" placeholder="Correo"></div>
+                        <div class="canasta_input_container"><input type="text" class="canasta_input" id="perfil_editarNombre" placeholder="Nombre"></div>
+                        <div class="canasta_input_container"><input type="text" class="canasta_input" id="perfil_editarApellido" placeholder="Apellido"></div>
+                        <div class="canasta_input_container"><input type="tel" class="canasta_input" id="perfil_editarTelefono" placeholder="Teléfono"></div>
+                        <div id="perfil_genero">
+                            <div id="perfil_genero_title">Género</div>
+                            <div id="perfil_genero_opciones">
+                                <table>
+                                    <tr>
+                                        <td class="perfil_genero_op_title">F</td>
+                                        <td><a class="genero_opt" id="perfil_generoFemenino" data-genero="2"></a></td>
+                                        <td class="perfil_genero_op_title perfil_genero_space">M</td>
+                                        <td><a class="genero_opt" id="perfil_generoMasculino" data-genero="1"></a></td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <input type="hidden" id="perfil_editarGenero" value="0">
+                        </div>
+                        <div id="perfil_notificaciones">
+                            <table>
+                                <tr>
+                                    <td>Recibir las notificaciones</td>
+                                    <td class="perfil_genero_space"><a id="recibirNotificaciones_btn"></a></td>
+                                </tr>
+                            </table>
+                            <input type="hidden" id="perfil_editarNotificaciones" value="0">
+                        </div>
+                        <div class="padding_5 perfil_actions">
+                            <div class="half half_minheight">
+                                <a class="app_button_black_full btn_30" id="btn_gotoChangePass" href="#page_cambiarPass" data-transition="none"><span class="btn_1_red"><span class="btn_2_black">CAMBIAR CONTRASEÑA</span></span></a>
+                            </div>
+                            <div class="half">
+                                <a class="app_button_red_full btn_30" id="btn_guardarPerfil" data-transition="none"><span class="btn_1_red"><span class="btn_2_red_30">GUARDAR</span></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- PAGE COMPLETAR PERFIL -->
+            <div data-role="page" id="page_completarPerfil">
+                <div class="page_head" id="head_tienda">
+                    <a class="btn_back" href="#page_canasta_2" data-transition="none"></a>
+                    <div class="page_head_title" id="title_canasta"></div>
+                    <a class="btn_cart" href="#page_cart" data-transition="none"><div class="btn_cart_count"></div></a>
+                    <a class="btn_displaySearch"></a>
+                </div>
+                <div class="page_content">
+                    <div id="completarPerfil_title">Por favor completa estos datos</div>
+                    <div id="completarPerfil_info">
+                        <div class="canasta_input_container"><input type="email" class="canasta_input" id="perfil_completarEmail" placeholder="Correo"></div>
+                        <div class="canasta_input_container"><input type="text" class="canasta_input" id="perfil_completarNombre" placeholder="Nombre"></div>
+                        <div class="canasta_input_container"><input type="text" class="canasta_input" id="perfil_completarApellido" placeholder="Apellido"></div>
+                        <div class="canasta_input_container"><input type="tel" class="canasta_input" id="perfil_completarTelefono" placeholder="Teléfono"></div>
+                        <div class="padding_5 perfil_actions">
+                            <a class="app_button_red btn_44" id="btn_completarPerfil"><span class="btn_1_red"><span class="btn_2_red">CONTINUAR</span></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- PAGE CAMBIAR CONTRASEÑA -->
+            <div data-role="page" id="page_cambiarPass">
+                <div class="page_head" id="head_tienda">
+                    <a class="btn_back" href="#page_editarPerfil" data-transition="none"></a>
+                    <div class="page_head_title" id="title_perfil"></div>
+                </div>
+                <div class="page_content">
+                    <div id="perfil_info">
+                        <div class="canasta_input_container"><input type="password" class="canasta_input" id="changePass_actual" placeholder="Contraseña actual"></div>
+                        <div class="canasta_input_container"><input type="password" class="canasta_input" id="changePass_nueva" placeholder="Contraseña nueva"></div>
+                        <div class="canasta_input_container"><input type="password" class="canasta_input" id="changePass_verificar" placeholder="Verificar contraseña"></div>
+                        <div class="padding_5 perfil_actions">
+                            <a class="app_button_red btn_44" id="btn_changePass"><span class="btn_1_red"><span class="btn_2_red">CAMBIAR CONTRASEÑA</span></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- PAGE MODO DE PAGO -->
+            <div data-role="page" id="page_modopago">
+                <div class="page_head" id="head_tienda">
+                    <a class="btn_back" href="#page_perfil" data-transition="none"></a>
+                    <div class="page_head_title" id="title_info"></div>
+                </div>
+                <div class="page_content">
+                    <div class="padding_10">
+                        <div id="modopago_title">TU MODO DE PAGO</div>
+                        <div class="full" id="modopago_Actual">
+                            <div class="modopago_title">TUS TARJETAS</div>
+                            <div class="full" id="modopago_items">
+                                
+                            </div>
+                            <div class="full" id="modopago_nuevo">
+                                <a class="app_button_red btn_44" id="btn_nuevoModoPago"><span class="btn_1_red"><span class="btn_2_red">AGREGAR NUEVO</span></span></a>
+                            </div>
+                        </div>
+                        <div class="full" id="modopago_Nuevo">
+                            <div class="modopago_data_title">Datos del titular</div>
+                            <div class="canasta_input_container"><input type="number" pattern="[0-9]*" class="canasta_input" id="modopago_cedula" placeholder="Tu cédula"></div>
+                            <div class="canasta_input_container"><input type="text" class="canasta_input" id="modopago_nombre" placeholder="Nombre en la tarjeta"></div>
+                            <div class="canasta_input_container"><input type="text" class="canasta_input" id="modopago_apellido" placeholder="Apellido en la tarjeta"></div>
+                            <div class="canasta_input_container"><input type="number" pattern="[0-9]*" class="canasta_input" id="modopago_tarjeta" placeholder="Número de la tarjeta"></div>
+                            <div class="modopago_data_title">Franquicia</div>
+                            <div class="canasta_input_container">
+                                <select class="canasta_input" id="modopago_franquicia">
+                                    
+                                </select>
+                            </div>
+                            <div class="modopago_data_title">Fecha de expiración</div>
+                            <div class="half_first">
+                                <div class="canasta_input_container">
+                                    <select class="canasta_input" id="modopago_year">
+                                        <option value="2016">2016</option>
+                                        <option value="2017">2017</option>
+                                        <option value="2018">2018</option>
+                                        <option value="2019">2019</option>
+                                        <option value="2020">2020</option>
+                                        <option value="2021">2021</option>
+                                        <option value="2022">2022</option>
+                                        <option value="2023">2023</option>
+                                        <option value="2024">2024</option>
+                                        <option value="2025">2025</option>
+                                        <option value="2026">2026</option>
+                                        <option value="2027">2027</option>
+                                        <option value="2028">2028</option>
+                                        <option value="2029">2029</option>
+                                        <option value="2030">2030</option>
+                                        <option value="2031">2031</option>
+                                        <option value="2032">2032</option>
+                                        <option value="2033">2033</option>
+                                        <option value="2034">2034</option>
+                                        <option value="2035">2035</option>
+                                        <option value="2036">2036</option>
+                                        <option value="2037">2037</option>
+                                        <option value="2038">2038</option>
+                                        <option value="2039">2039</option>
+                                        <option value="2040">2040</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="half_last">
+                                <div class="canasta_input_container">
+                                    <select class="canasta_input" id="modopago_month">
+                                        <option value="1">01</option>
+                                        <option value="2">02</option>
+                                        <option value="3">03</option>
+                                        <option value="4">04</option>
+                                        <option value="5">05</option>
+                                        <option value="6">06</option>
+                                        <option value="7">07</option>
+                                        <option value="8">08</option>
+                                        <option value="9">09</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="canasta_input_container"><input type="number" pattern="[0-9]*" class="canasta_input" id="modopago_codigoSeguridad" placeholder="Código de seguridad"></div>
+                            <div class="modopago_data_title">Datos de correspondencia</div>
+                            <div class="canasta_input_container"><input type="text" class="canasta_input" id="modopago_ciudad" placeholder="Ciudad"></div>
+                            <div class="canasta_input_container"><input type="text" class="canasta_input" id="modopago_dir" placeholder="Dirección"></div>
+                            <div class="canasta_input_container"><input type="email" class="canasta_input" id="modopago_email" placeholder="Email"></div>
+                            <div class="canasta_input_container"><input type="tel" class="canasta_input" id="modopago_tel" placeholder="Teléfono"></div>
+                            <div id="modopago_Guardar">
+                                <a class="app_button_red btn_44" id="btn_guardarModoPago"><span class="btn_1_red"><span class="btn_2_red">GUARDAR</span></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- PAGE INFO -->
+            <div data-role="page" id="page_info">
+                <div class="page_head" id="head_tienda">
+                    <a class="btn_back" href="#page_perfil" data-transition="none"></a>
+                    <div class="page_head_title" id="title_info"></div>
+                </div>
+                <div class="page_content" id="page_content_info">
+                    <div class="info_item">
+                        <div class="info_item_img"><img src="images/btn_wapp.png"></div>
+                        <div class="info_item_text">Whatsapp</div>
+                    </div>
+                    <div class="info_item">
+                        <div class="info_item_img"><img src="images/btn_mail.png"></div>
+                        <div class="info_item_text">Contáctanos</div>
+                    </div>
+                    <div class="info_item">
+                        <div class="info_item_img"><img src="images/btn_info.png"></div>
+                        <div class="info_item_text"><a class="info_link" href="#page_terminos" data-transition="none">Términos y condiciones</a></div>
+                    </div>
+                    <div class="info_item">
+                        <div class="info_item_text"><a class="info_link" href="#page_terminos" data-transition="none">Política de privacidad</a></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- PAGE TÉRMINOS Y CONDICIONES -->
+            <div data-role="page" id="page_terminos">
+                <div class="page_head" id="head_terminos">
+                    <div class="page_head_title" id="title_terminos"></div>
+                    <a class="btn_displayMenu1"></a>
+                    <!--<a class="btn_displayMenu"></a>-->
+                </div>
+                <div class="page_content" id="page_content_terminos">
+                    
+                </div>
+            </div>
+            <div data-role="page" id="page_privacidad">
+                <div class="page_head" id="head_terminos">
+                    <div class="page_head_title" id="title_terminos"></div>
+                    <a class="btn_displayMenu1"></a>
+                    <!--<a class="btn_displayMenu"></a>-->
+                </div>
+                <div class="page_content" id="page_content_privacidad">
+                    
+                </div>
+            </div>
+            
+        </div>
+        <script src="phonegap.js"></script>
+        <script type="text/javascript" src="js/app_user.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1d7U3aKAtzshaRflFqmQVva7QhnyyaA8&libraries=geometry&callback=initMap"
+         async defer></script>
+    </body>
+</html>

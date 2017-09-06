@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>CARNES MARKET - Login</title>
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+        <link rel="stylesheet" type="text/css" href="inc/jquery.mobile-1.4.5/jquery.mobile.custom.structure.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <script src="inc/jquery.js"></script>
+        <script src="inc/jquery.mobile-1.4.5/jquery.mobile.custom.min.js"></script>
+        <script src="inc/fastclick.js"></script>
+    </head>
+    <body>
+        <div class="app">
+            
+            <!-- LOADING -->
+            <div id="loading">
+                <div id="loading_gif"></div>
+            </div>
+            
+            <!-- PAGE LOGIN -->
+            <div data-role="page" id="page_first">
+                <div id="login_logo"><img src="images/login_logo.png"></div>
+                <div class="padding_10" id="login_form">
+                    <div class="app_input_container"><input type="text" class="app_input" id="login_user" placeholder="Correo" autocapitalize="none"></div>
+                    <div class="app_input_container"><input type="password" class="app_input" id="login_pass" placeholder="Contraseña" autocapitalize="none"></div>
+                    <div class="btn_text_container">
+                        <a href="#page_restablecer" class="btn_forgot_pass" data-transition="none">¿Olvidaste tu contraseña?</a>
+                    </div>
+                    <div class="full">
+                        <a class="app_button_red btn_44" id="btn_iniciarSesion"><span class="btn_1_red"><span class="btn_2_red">INICIAR SESIÓN</span></span></a>
+                    </div>
+                    <hr class="separator">
+                    <div class="full">
+                        <a class="app_button_facebook btn_30" id="btn_iniciarfacebook"><span class="btn_1_red"><span class="btn_2_facebook">INICIAR CON FB</span></span></a>
+                        <a class="app_button_red btn_30" href="#page_registro" data-transition="none"><span class="btn_1_red"><span class="btn_2_red_30">REGISTRARSE</span></span></a>
+                    </div>
+                    <div class="btn_text_container">
+                        <a id="btn_ingresoSimple" class="btn_forgot_pass" data-transition="none">Ingresa sin registrarte</a>
+                    </div>
+                    <div id="login_terms_container">
+                        Al usar esta app, aceptas las <a href="#page_terminos" class="btn_terms" data-transition="none">Condiciones</a> y la <a href="#page_privacidad" class="btn_terms" data-transition="none">política de privacidad</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- PAGE REGISTRO -->
+            <div data-role="page" id="page_registro">
+                <div class="page_head" id="head_registro">
+                    <div class="page_head_title" id="title_registro"></div>
+                    <a class="btn_back" href="#page_first" data-transition="none"></a>
+                </div>
+                <div class="page_content page_content_bottom">
+                    <div class="padding_10" id="login_form">
+                        <div class="app_input_container"><input type="email" class="app_input" id="reg_email" placeholder="Correo" autocapitalize="none"></div>
+                        <div class="app_input_container"><input type="password" class="app_input" id="reg_pass" placeholder="Contraseña" autocapitalize="none"></div>
+                        <div class="app_input_container"><input type="text" class="app_input" id="reg_nombre" placeholder="Nombre" autocapitalize="sentences"></div>
+                        <div class="app_input_container"><input type="text" class="app_input" id="reg_apellido" placeholder="Apellido" autocapitalize="sentences"></div>
+                        <div class="app_input_container"><input type="tel" class="app_input" id="reg_tel" placeholder="Celular"></div>
+                        <div id="registro_aceptarTerms">
+                            <table>
+                                <tr>
+                                    <td><a id="aceptaTerminos"></a></td>
+                                    <td>Acepto los términos y política de privacidad</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <a class="app_button_red btn_44" id="btn_registrarse"><span class="btn_1_red"><span class="btn_2_red">REGISTRARSE</span></span></a>
+                        <div id="login_terms_container">
+                            <br><br>
+                            Al usar esta app, aceptas las <a href="#page_terminos" class="btn_terms" data-transition="none">Condiciones</a> y la <a href="#page_privacidad" class="btn_terms" data-transition="none">política de privacidad</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- PAGE RESTABLECER PASS -->
+            <div data-role="page" id="page_restablecer">
+                <div class="page_head" id="head_restablecer">
+                    <div class="page_head_title" id="title_restablecer"></div>
+                    <a class="btn_back" href="#page_first" data-transition="none"></a>
+                </div>
+                <div class="page_content page_content_bottom">
+                    <div class="padding_10" id="login_form">
+                        Ingresa tu correo y te enviaremos tu contraseña.<br><br><br><br>
+                        <div class="app_input_container"><input type="email" class="app_input" id="restab_email" placeholder="Correo" autocapitalize="none"></div>
+                        <a class="app_button_red btn_44" id="btn_restablecer"><span class="btn_1_red"><span class="btn_2_red">ENVIAR CONTRASEÑA</span></span></a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- PAGE TÉRMINOS Y CONDICIONES -->
+            <div data-role="page" id="page_terminos">
+                <div class="page_head" id="head_terminos">
+                    <div class="page_head_title" id="title_terminos"></div>
+                    <a class="btn_back" data-rel="back" data-transition="none"></a>
+                </div>
+                <div class="page_content page_content_bottom" id="page_content_terminos">
+                    
+                </div>
+            </div>
+            <div data-role="page" id="page_privacidad">
+                <div class="page_head" id="head_terminos">
+                    <div class="page_head_title" id="title_terminos"></div>
+                    <a class="btn_back" data-rel="back" data-transition="none"></a>
+                </div>
+                <div class="page_content page_content_bottom" id="page_content_privacidad">
+                    
+                </div>
+            </div>
+            
+        </div>
+        <script src="phonegap.js"></script>
+        <script type="text/javascript" src="js/login.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+    </body>
+</html>
