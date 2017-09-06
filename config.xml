@@ -14,12 +14,12 @@
         Carnes Market App
     </description>
 
-    <author href="http://camellando.co" email="contacto@camellando.co">
+    <author href="http://carnesmarket.co" email="digital@carnesmarket.co">
         Camellando
     </author>
     
     <!-- Versión de Phonegap -->
-    <preference name="phonegap-version" value="cli-6.3.0" />
+    <preference name="phonegap-version" value="cli-6.5.0" />
     
     <!-- Plataformas soportadas -->
     <platform name="ios" />
